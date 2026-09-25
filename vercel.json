@@ -1,0 +1,11 @@
+{
+  "framework": "vite",
+  "buildCommand": "cd outgraph/frontend && npm install && npm run build",
+  "outputDirectory": "outgraph/frontend/dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
