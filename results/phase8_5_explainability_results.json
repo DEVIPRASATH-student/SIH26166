@@ -1,0 +1,146 @@
+{
+  "phase": "Phase 8.5 — Explainability / Provenance / Evidence Visibility",
+  "status": "EXPLAINABILITY_VALIDATED",
+  "sih_problem": "SIH26166",
+  "project": "LunarSynapse — Physics-Aware, Self-Evolving Multi-Modal Lunar World Model",
+  "execution_timestamp": "2026-09-24T23:17:00Z",
+  "scientific_guardrails": {
+    "raw_data_integrity": {
+      "target_directory": "data/real/",
+      "bytes_modified": 0,
+      "untracked_preserved": true
+    },
+    "epistemic_axioms": {
+      "visual_similarity_neq_physical_correspondence": true,
+      "entity_association_neq_direct_image_correspondence": true,
+      "spatial_proximity_neq_entity_identity": true,
+      "unknown_neq_negative": true,
+      "missing_evidence_not_converted_to_negative": true,
+      "real_data_accuracy": "N/A",
+      "real_lunar_empirical_uncertainty_calibration": "NOT ESTABLISHED",
+      "uncertainty_saturation_limit": "4.0 px"
+    },
+    "terminology_guardrails": {
+      "recommendations_use_potentially_reduces_uncertainty": true,
+      "forbidden_will_resolve_prohibited": true,
+      "forbidden_guaranteed_prohibited": true,
+      "no_spacecraft_tasking_simulated": true
+    }
+  },
+  "physical_gates_architecture": {
+    "count": 6,
+    "gate_definitions": [
+      {"gate_id": 1, "gate_name": "INVALID_SOURCE_GROUNDGRID"},
+      {"gate_id": 2, "gate_name": "DEM_OUT_OF_BOUNDS_OR_NODATA"},
+      {"gate_id": 3, "gate_name": "TARGET_OUTSIDE_CALIBRATED_SWATH"},
+      {"gate_id": 4, "gate_name": "TARGET_CLAMPED_TO_SWATH_BOUNDARY"},
+      {"gate_id": 5, "gate_name": "TARGET_OUTSIDE_ELEVATION_CORRIDOR"},
+      {"gate_id": 6, "gate_name": "BIDIRECTIONAL_RESIDUAL_TOO_LARGE"}
+    ],
+    "illumination_distinction": "Illumination verification is a standalone radiometric consistency check and is strictly NOT Gate 5. Gate 5 remains TARGET_OUTSIDE_ELEVATION_CORRIDOR."
+  },
+  "evidence_dimensions_count": 11,
+  "evidence_dimensions": [
+    "GEOMETRIC",
+    "TERRAIN",
+    "ILLUMINATION",
+    "SPECTRAL",
+    "SCALE",
+    "TEMPORAL",
+    "TEXTURE",
+    "REGISTRATION",
+    "PHYSICAL",
+    "MANUAL",
+    "SYNTHETIC"
+  ],
+  "canonical_demonstration_scenarios": {
+    "SCENARIO-A": {
+      "name": "Real Lunar Negative Control (OHRC vs TMC-2)",
+      "is_synthetic": false,
+      "provenance": "REAL LUNAR DATA (ISRO Chandrayaan-2 ISSDC Archive)",
+      "current_instance_candidates": 26,
+      "historical_benchmark_candidates": 31,
+      "historical_benchmark_inliers": 8,
+      "historical_benchmark_inlier_ratio_pct": 25.81,
+      "footprint_separation_km": "1.49 - 2.04 km",
+      "decision": "REJECTED",
+      "decisive_gate": "GATE 3 (TARGET_OUTSIDE_CALIBRATED_SWATH)",
+      "physical_correspondence_validated": false,
+      "knowledge_gap": "GAP-REAL-FOOTPRINT-001 (FOOTPRINT_NON_OVERLAP)",
+      "recommendation_type": "POTENTIALLY_REDUCES_UNCERTAINTY",
+      "judge_card_question": "Why did LunarSynapse reject this apparent visual match?",
+      "judge_card_summary": "Visual candidates found in image space (~26 matches), but calibrated GroundGrid geometry establishes footprint separation of ~1.49-2.04 km (Gate 3 rejection). Physical correspondence is not validated. Does not mean images are unrelated (both observe Boguslawsky region)."
+    },
+    "SCENARIO-B": {
+      "name": "Synthetic Controlled Positive Control",
+      "is_synthetic": true,
+      "provenance": "SYNTHETIC CONTROLLED DATA",
+      "candidates": 48,
+      "inliers": 42,
+      "decision": "ACCEPTED",
+      "decisive_gate": "NONE (ALL GATES PASSED)",
+      "disclaimer": "Synthetic positive control demonstrates algorithm function under known conditions; does not establish real-lunar accuracy."
+    },
+    "SCENARIO-C": {
+      "name": "Synthetic Illumination Contradiction",
+      "is_synthetic": true,
+      "provenance": "SYNTHETIC CONTROLLED DATA",
+      "candidates": 38,
+      "inliers": 18,
+      "physical_gates_result": "PASS (PHYSICAL GATES 1-6 PASSED)",
+      "illumination_verification_result": "REJECTED",
+      "solar_azimuth_divergence_deg": 180.0,
+      "threshold_deg": 60.0,
+      "decision": "REJECTED",
+      "language": "physically unsupported under the tested conditions",
+      "gate_5_distinction": "Rejection occurred at illumination verification, NOT Gate 5."
+    },
+    "SCENARIO-D": {
+      "name": "Synthetic Low-Evidence UNKNOWN Control",
+      "is_synthetic": true,
+      "provenance": "SYNTHETIC CONTROLLED DATA",
+      "candidates": 2,
+      "minimum_required_for_homography": 4,
+      "decision": "UNKNOWN",
+      "axiom_preserved": "UNKNOWN != NEGATIVE",
+      "knowledge_gap": "GAP-PSR-EVIDENCE-001 (INSUFFICIENT_EVIDENCE)",
+      "recommendation_type": "POTENTIALLY_REDUCES_UNCERTAINTY"
+    },
+    "SCENARIO-E": {
+      "name": "Cross-Modal Scale Disparity Knowledge Gap → Next-Best Observation",
+      "is_synthetic": true,
+      "provenance": "SYNTHETIC CONTROLLED DATA",
+      "scale_ratio": 20.0,
+      "candidates": 8,
+      "inliers": 3,
+      "reprojection_residual_px": 3.45,
+      "decision": "AMBIGUOUS",
+      "knowledge_gap": "GAP-SCALE-DISPARITY-001 (MISSING_MODALITY)",
+      "recommendation_type": "POTENTIALLY_REDUCES_UNCERTAINTY",
+      "recommended_sensor": "TMC-2_STEREO_1M",
+      "disclaimer": "Active observation recommendations are autonomous decision-support proposals, NOT spacecraft tasking, orbital scheduling, or mission commands."
+    }
+  },
+  "api_endpoints": {
+    "scenario_explanations_list": "GET /api/demo/scenarios-explanations",
+    "single_scenario_explanation": "GET /api/demo/scenarios/{scenario_id}/explanation"
+  },
+  "frontend_integration": {
+    "component": "outgraph/frontend/src/components/ExplainabilityModal.tsx",
+    "pages_integrated": ["outgraph/frontend/src/pages/ScenariosLab.tsx"],
+    "tabs": [
+      "Judge Card & Verdict",
+      "Physical Gates & Illumination",
+      "11D Evidence Fusion",
+      "Uncertainty & Gaps",
+      "Decision Trace",
+      "Full Provenance"
+    ],
+    "build_status": "CLEAN (0 errors, dist built in 43.01s)"
+  },
+  "test_metrics": {
+    "dedicated_phase8_5_tests": 19,
+    "dedicated_phase8_5_passed": 19,
+    "dedicated_phase8_5_failed": 0
+  }
+}

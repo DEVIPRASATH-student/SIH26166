@@ -1,0 +1,12 @@
+{
+  "total_pairs_evaluated": 1,
+  "total_runs": 5,
+  "real_data_executed": false,
+  "status_counts": {
+    "ACCEPTED": 0,
+    "REJECTED": 0,
+    "AMBIGUOUS": 0,
+    "INSUFFICIENT_EVIDENCE": 0
+  },
+  "timestamp": "2026-09-23 22:01:54"
+}

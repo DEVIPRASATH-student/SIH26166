@@ -1,0 +1,13 @@
+{
+  "scale_ratio": 23.34615,
+  "total_runs": 30,
+  "final_decision": {
+    "decision_code": "SCALE_EFFECT_OBSERVED_BUT_GEOMETRICALLY_UNSTABLE",
+    "justification": "Scale normalization increased raw candidate match density (up to 66) and raw RANSAC inliers (up to 14), but ALL estimated homographies remain GEOMETRICALLY DEGENERATE (condition number > 500, extreme reprojection RMSE, vanishing line poles near image domain, or invalid corner projections). No stable planar homography exists across OHRC \u2194 TMC-2 due to unmodeled 3D topographic relief, extreme illumination differences, and strip geometry high aspect ratio.",
+    "max_baseline_inliers": 9,
+    "max_scale_normalized_inliers": 14,
+    "geometrically_stable_runs_count": 0,
+    "scientific_disclaimer": "These experiments use real Chandrayaan-2 OHRC and TMC-2 products. Observed candidate match density increases with scale normalization, but all estimated 2D planar homographies are geometrically degenerate. Scientific correspondence validation requires 3D DEM relief displacement modeling, illumination correction, or precise epipolar constraints."
+  },
+  "timestamp": "2026-09-21 14:00:35"
+}

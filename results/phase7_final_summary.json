@@ -1,0 +1,120 @@
+{
+  "phase": "7",
+  "status": "SCIENTIFIC_BENCHMARK_VALIDATED",
+  "sub_stages_completed": [
+    "7.0",
+    "7.1",
+    "7.2",
+    "7.3",
+    "7.4",
+    "7.5",
+    "7.6",
+    "7.7",
+    "7.8",
+    "7.9",
+    "7.10",
+    "7.11",
+    "7.12"
+  ],
+  "real_data_accuracy_validated": false,
+  "physical_correspondence_validated": false,
+  "uncertainty_real_lunar_calibration_established": false,
+  "synthetic_benchmarks_available": true,
+  "uncertainty_calibration_status": "UNCERTAINTY_CALIBRATION_VALIDATED",
+  "world_model_status": "WORLD_MODEL_BENCHMARK_VALIDATED",
+  "active_loop_status": "WORLD_MODEL_BENCHMARK_VALIDATED",
+  "raw_data_modified": 0,
+  "tests_passed": 299,
+  "tests_failed": 0,
+  "warnings": 680,
+  "real_datasets": [
+    {
+      "name": "Chandrayaan-2 OHRC",
+      "product_id": "ch2_ohr_ncp_20210402T0546284043_d_img_d18",
+      "gsd_m": 0.26,
+      "status": "AVAILABLE_LOCAL",
+      "ground_grid_verified": true
+    },
+    {
+      "name": "Chandrayaan-2 TMC-2",
+      "product_id": "ch2_tmc_nca_20240523T1600309581_d_img_d18",
+      "gsd_m": 6.07,
+      "status": "AVAILABLE_LOCAL",
+      "ground_grid_verified": true
+    },
+    {
+      "name": "LOLA/Kaguya SLDEM2015",
+      "product_id": "SLDEM2015_512_00N_30N_000_045.JP2",
+      "resolution_ppd": 512,
+      "status": "AVAILABLE_LOCAL",
+      "dem_verified": true
+    },
+    {
+      "name": "Chandrayaan-2 IIRS",
+      "status": "UNAVAILABLE"
+    },
+    {
+      "name": "LRO LROC NAC",
+      "status": "UNAVAILABLE"
+    },
+    {
+      "name": "SELENE TC",
+      "status": "UNAVAILABLE"
+    }
+  ],
+  "synthetic_benchmarks": [
+    "Scale Sweep (1.0x to 23.35x)",
+    "Illumination Sweep (15 to 90 deg)",
+    "Geometric Distortion Sweep (0 to 180 deg)",
+    "Sensor Noise Sweep (sigma 0 to 75 DN)",
+    "Optical Blur Sweep (sigma 0 to 5.0 px)",
+    "Terrain Relief Sweep (0 to 1000m)",
+    "Partial Overlap Sweep (0% to 100%)",
+    "Feature Density Sweep (0 to 35 craters)",
+    "Uncertainty Divergence & Epistemic Risk",
+    "Knowledge-Gap 8-Scenario Suite"
+  ],
+  "production_changes": [
+    {
+      "file": "outgraph/ml/world_model/knowledge_gap.py",
+      "reason": "Explicit detection rules for MISSING_GEOMETRIC_VALIDATION and MISSING_MODALITY to guarantee 100% gap detection coverage",
+      "behavioral_impact": "Identifies unvalidated initial candidates and missing auxiliary spectral channels cleanly"
+    }
+  ],
+  "limitations": [
+    "No independently validated real OHRC/TMC-2 tie-point ground truth exists; real-data accuracy is strictly N/A.",
+    "Real physical correspondence remains not validated due to 1.5 - 2.1 km physical swath separation.",
+    "Additional sensor modalities (IIRS, LROC NAC, SELENE TC) remain unavailable locally.",
+    "Synthetic benchmarks demonstrate controlled algorithmic robustness but cannot substitute for real-lunar verification.",
+    "Empirical probabilistic calibration (e.g. ECE) on real lunar data remains unestablished.",
+    "Geometric uncertainty saturation occurs above 4.0 px reprojection error.",
+    "Active-loop belief confirmation (SUPPORTED to CONFIRMED) was demonstrated using synthetic follow-up altimetry.",
+    "Full spacecraft orbital mechanics, attitude jitter, and mission scheduling constraints are not simulated."
+  ],
+  "claims": [
+    {
+      "claim": "Under the tested synthetic parameter range, scale normalization changed correspondence recovery.",
+      "status": "DEMONSTRATED"
+    },
+    {
+      "claim": "The evaluated real OHRC/TMC-2 candidates were rejected by the physical validation pipeline under tested conditions.",
+      "status": "DEMONSTRATED"
+    },
+    {
+      "claim": "The world model maintained non-transitive entity associations under evaluated controlled scenarios.",
+      "status": "DEMONSTRATED"
+    },
+    {
+      "claim": "Observed optical parallax displacement scales linearly with terrain relief at 88.96m per 1000m relief for TMC-2 wing.",
+      "status": "DEMONSTRATED"
+    },
+    {
+      "claim": "Real-data correspondence accuracy is universally established.",
+      "status": "NOT_VALIDATED"
+    },
+    {
+      "claim": "LunarSynapse is universally scale and illumination invariant.",
+      "status": "NOT_VALIDATED"
+    }
+  ]
+}

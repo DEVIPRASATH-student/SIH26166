@@ -1,0 +1,203 @@
+{
+  "phase": "Phase 8.4 — Real + Synthetic Demonstration Scenarios",
+  "status": "DEMONSTRATION_VALIDATED",
+  "timestamp": "2026-09-24T22:42:00Z",
+  "scenarios_evaluated": [
+    {
+      "scenario_id": "SCENARIO-A",
+      "scenario_name": "Real Lunar Negative Control (OHRC vs TMC-2)",
+      "scenario_type": "REAL_NEGATIVE_CONTROL",
+      "real_or_synthetic": "REAL",
+      "is_synthetic": false,
+      "source_observation": "urn:isro:isda:ch2_cho.ohr:data_calibrated:ch2_ohr_ncp_20210402t0546284043_d_img_d18",
+      "target_observation": "urn:isro:isda:ch2_cho.tmc:data_calibrated:ch2_tmc_nca_20240523t1600309581_d_img_d18",
+      "correspondence_id": "CORR-urn:isro:isda:ch2_cho.ohr:data_calibrated:ch2_ohr_ncp_20210402t0546284043_d_img_d18-urn:isro:isda:ch2_cho.tmc:data_calibrated:ch2_tmc_nca_20240523t1600309581_d_img_d18",
+      "candidate_count": 26,
+      "candidate_count_notes": "CURRENT DEMONSTRATION INSTANCE: 26 visual feature candidates generated under current pipeline configuration. Phase 7 benchmark recorded SIFT = 31 candidates / 8 geometric inliers under historical baseline settings.",
+      "geometric_result": "VISUAL_CANDIDATES_FOUND (26 feature matches detected in image space, forming candidate correspondence hypothesis)",
+      "physical_result": "REJECTED (GATE 3 / GATE 4: FOOTPRINT_NON_OVERLAP; Calibrated GroundGrid target falls outside calibrated swath by ~1.49 km - 2.04 km; physical correspondence not validated)",
+      "gate_metrics_notes": "GATE METRICS DISTINCTION: Bidirectional image-space residual threshold <= 4.0 px (Gate 6 saturation bound); Physical ground-space residual rejection threshold > 15 m; Footprint separation ~1.49-2.04 km.",
+      "evidence_dimensions_evaluated": 11,
+      "uncertainty_state": {
+        "scalar_uncertainty": 0.95,
+        "epistemic_uncertainty": 0.90,
+        "aleatoric_uncertainty": 0.25,
+        "qualitative_risk": "HIGH_EPISTEMIC_RISK",
+        "status": "UNKNOWN",
+        "confidence_interval": [0.0, 0.08],
+        "calibration_note": "REAL-LUNAR EMPIRICAL UNCERTAINTY CALIBRATION NOT ESTABLISHED"
+      },
+      "knowledge_gap": {
+        "gap_id": "GAP-REAL-FOOTPRINT-001",
+        "gap_type": "FOOTPRINT_NON_OVERLAP",
+        "priority": 0.92
+      },
+      "recommendation": {
+        "recommendation_id": "REC-REAL-OBS-001",
+        "recommendation_type": "POTENTIALLY_REDUCES_UNCERTAINTY",
+        "recommended_sensor": "TMC-2_ADJACENT_STRIP",
+        "expected_information_gain": 0.78
+      },
+      "mandatory_limitations": [
+        "REAL-DATA ACCURACY = N/A",
+        "PHYSICAL CORRESPONDENCE NOT VALIDATED",
+        "REAL-LUNAR EMPIRICAL UNCERTAINTY CALIBRATION NOT ESTABLISHED",
+        "The evaluated physical geometry does not support correspondence for this pair."
+      ]
+    },
+    {
+      "scenario_id": "SCENARIO-B",
+      "scenario_name": "Controlled Synthetic OHRC Homologous Pair",
+      "scenario_type": "SYNTHETIC_POSITIVE_CONTROL",
+      "real_or_synthetic": "SYNTHETIC",
+      "is_synthetic": true,
+      "source_observation": "OBS-OHRC-SYNTH-01",
+      "target_observation": "OBS-OHRC-SYNTH-02",
+      "correspondence_id": "CORR-OBS-OHRC-SYNTH-01-OBS-OHRC-SYNTH-02",
+      "candidate_count": 184,
+      "geometric_inliers": 168,
+      "inlier_ratio": 0.913,
+      "geometric_result": "GEOMETRICALLY_CONSISTENT",
+      "physical_result": "PHYSICALLY_VERIFIED (All 6 physical gates passed under known synthetic conditions)",
+      "gate_metrics_notes": "GATE METRICS DISTINCTION: Image-space residual = 1.2 px (<= 4.0 px threshold); Physical ground-space residual = 2.1 m (<= 15 m threshold); Inlier count 168 (>= 4 required).",
+      "evidence_dimensions_evaluated": 11,
+      "uncertainty_state": {
+        "scalar_uncertainty": 0.08,
+        "epistemic_uncertainty": 0.04,
+        "aleatoric_uncertainty": 0.07,
+        "qualitative_risk": "LOW_EPISTEMIC_RISK",
+        "status": "CONTROLLED_CONFIRMED"
+      },
+      "mandatory_limitations": [
+        "This controlled synthetic result demonstrates pipeline behavior under known conditions. It does not establish real-lunar accuracy.",
+        "Synthetic data MUST NEVER contribute to real-data accuracy or real benchmark statistics."
+      ]
+    },
+    {
+      "scenario_id": "SCENARIO-C",
+      "scenario_name": "Controlled Synthetic Illumination Contradiction",
+      "scenario_type": "SYNTHETIC_ADVERSARIAL_CONTROL",
+      "real_or_synthetic": "SYNTHETIC",
+      "is_synthetic": true,
+      "source_observation": "OBS-CONTRA-001",
+      "target_observation": "OBS-CONTRA-002",
+      "correspondence_id": "CORR-OBS-CONTRA-001-OBS-CONTRA-002",
+      "candidate_count": 45,
+      "geometric_result": "VISUAL_CANDIDATES_FOUND (45 visual feature matches detected; false positive candidate hypothesis)",
+      "physical_result": "REJECTED (Illumination verification rejected the candidate due to the controlled 180.0 deg solar/illumination divergence (>60.0 deg threshold); physical correspondence is unsupported under the tested illumination condition)",
+      "gate_metrics_notes": "ILLUMINATION METRICS DISTINCTION: Illumination verification is separate from the six physical gates (Gate 5 remains TARGET_OUTSIDE_ELEVATION_CORRIDOR). Solar azimuth divergence = 180.0 deg (rejection threshold > 60.0 deg); shadow inversion mimics opposing topological slopes.",
+      "evidence_dimensions_evaluated": 11,
+      "uncertainty_state": {
+        "scalar_uncertainty": 0.88,
+        "epistemic_uncertainty": 0.85,
+        "aleatoric_uncertainty": 0.30,
+        "qualitative_risk": "HIGH_EPISTEMIC_RISK",
+        "status": "REJECTED_UNPHYSICAL"
+      },
+      "knowledge_gap": {
+        "gap_id": "GAP-SYNTH-ILLUM-001",
+        "gap_type": "ILLUMINATION_CONTRADICTION",
+        "priority": 0.85
+      },
+      "recommendation": {
+        "recommendation_id": "REC-SYNTH-ILLUM-001",
+        "recommendation_type": "POTENTIALLY_REDUCES_UNCERTAINTY",
+        "recommended_sensor": "OHRC_CONGRUENT_ILLUMINATION",
+        "expected_information_gain": 0.72
+      },
+      "mandatory_limitations": [
+        "Physically unsupported under the tested conditions. Does not represent a 'wrong lunar feature' classification, but an unphysical correspondence hypothesis.",
+        "Visual similarity != physical correspondence."
+      ]
+    },
+    {
+      "scenario_id": "SCENARIO-D",
+      "scenario_name": "Permanently Shadowed Region (PSR) Low-Evidence Control",
+      "scenario_type": "UNKNOWN_INSUFFICIENT_EVIDENCE",
+      "real_or_synthetic": "SYNTHETIC",
+      "is_synthetic": true,
+      "source_observation": "OBS-UNKNOWN-001",
+      "target_observation": "OBS-UNKNOWN-002",
+      "correspondence_id": "CORR-OBS-UNKNOWN-001-OBS-UNKNOWN-002",
+      "candidate_count": 2,
+      "geometric_result": "INSUFFICIENT_FEATURES (N=2 < 4 candidates; cannot construct geometric hypothesis)",
+      "physical_result": "EVALUATION_INCOMPLETE (Insufficient visual candidates to construct geometric homography or evaluate physical gates; decision unforced)",
+      "gate_metrics_notes": "GATE METRICS DISTINCTION: Keypoint count = 2 (< 4 required for RANSAC affine/homography evaluation); pipeline halts at hypothesis stage; UNKNOWN != NEGATIVE.",
+      "evidence_dimensions_evaluated": 11,
+      "uncertainty_state": {
+        "scalar_uncertainty": 1.0,
+        "epistemic_uncertainty": 1.0,
+        "aleatoric_uncertainty": 0.80,
+        "qualitative_risk": "HIGH_EPISTEMIC_RISK",
+        "status": "UNKNOWN"
+      },
+      "knowledge_gap": {
+        "gap_id": "GAP-PSR-EVIDENCE-001",
+        "gap_type": "INSUFFICIENT_EVIDENCE",
+        "priority": 0.88
+      },
+      "recommendation": {
+        "recommendation_id": "REC-PSR-LIGHT-001",
+        "recommendation_type": "POTENTIALLY_REDUCES_UNCERTAINTY",
+        "recommended_sensor": "OHRC_SECONDARY_LIGHT",
+        "expected_information_gain": 0.82
+      },
+      "mandatory_limitations": [
+        "UNKNOWN != NEGATIVE: Lack of evidence does not indicate absence of feature or negative physical evidence.",
+        "Pipeline refrains from forcing an ungrounded binary decision."
+      ]
+    },
+    {
+      "scenario_id": "SCENARIO-E",
+      "scenario_name": "Cross-Modal Scale Disparity Knowledge Gap → Next-Best Observation",
+      "scenario_type": "KNOWLEDGE_GAP_NBO",
+      "real_or_synthetic": "SYNTHETIC",
+      "is_synthetic": true,
+      "source_observation": "OBS-OHRC-001",
+      "target_observation": "OBS-TMC2-001",
+      "correspondence_id": "CORR-OBS-OHRC-001-OBS-TMC2-001",
+      "candidate_count": 8,
+      "geometric_result": "AMBIGUOUS_SCALE_MATCH (8 candidate matches; scale disparity 20x prevents stable sub-pixel consensus)",
+      "physical_result": "UNCERTAIN (Scale disparity limits direct physical gate validation; triggers knowledge gap and autonomous observation recommendation)",
+      "gate_metrics_notes": "GATE METRICS DISTINCTION: Scale ratio = 20.0x exceeds single-step scale pyramid invariance threshold without intermediate resolution anchor.",
+      "evidence_dimensions_evaluated": 11,
+      "uncertainty_state": {
+        "scalar_uncertainty": 0.72,
+        "epistemic_uncertainty": 0.68,
+        "aleatoric_uncertainty": 0.35,
+        "qualitative_risk": "HIGH_EPISTEMIC_RISK",
+        "status": "UNCERTAIN"
+      },
+      "knowledge_gap": {
+        "gap_id": "GAP-SCALE-DISPARITY-001",
+        "gap_type": "MISSING_MODALITY",
+        "priority": 0.76
+      },
+      "recommendation": {
+        "recommendation_id": "REC-SCALE-BRIDGE-001",
+        "recommendation_type": "POTENTIALLY_REDUCES_UNCERTAINTY",
+        "recommended_sensor": "TMC-2_STEREO_1M",
+        "expected_information_gain": 0.65
+      },
+      "mandatory_limitations": [
+        "Active observation recommendations are autonomous decision-support proposals, NOT spacecraft tasking, orbital scheduling, or mission commands.",
+        "POTENTIALLY_REDUCES_UNCERTAINTY: Recommendations provide information gain estimates, not guarantees."
+      ]
+    }
+  ],
+  "scientific_safety_audit": {
+    "forbidden_phrases_searched": 13,
+    "forbidden_phrases_found": 0,
+    "claim_safety_status": "VERIFIED_COMPLIANT"
+  },
+  "raw_data_integrity": {
+    "path": "data/real/",
+    "bytes_modified": 0,
+    "status": "UNTOUCHED"
+  },
+  "tests_summary": {
+    "dedicated_phase8_4_tests": 11,
+    "dedicated_passed": 11,
+    "dedicated_failed": 0
+  }
+}

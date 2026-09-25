@@ -1,0 +1,37 @@
+# Ignore large lunar datasets and binaries from Docker build context
+data/real/
+data/cache/
+*.img
+*.IMG
+*.xml
+*.XML
+*.tif
+*.TIF
+*.jp2
+*.JP2
+*.db
+*.sqlite3
+
+# Python build artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+env/
+venv/
+
+# Frontend artifacts
+frontend/node_modules/
+frontend/dist/
+dist/
+node_modules/
+
+# OS and temporary files
+.DS_Store
+Thumbs.db
+*.log
+scratch/

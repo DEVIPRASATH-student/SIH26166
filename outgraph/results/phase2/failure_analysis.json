@@ -1,0 +1,122 @@
+[
+  {
+    "pair_id": "SYNTH_CTRL_OHRC_LRO_001",
+    "matcher": "SIFT",
+    "status": "GEOMETRICALLY_DEGENERATE",
+    "failure_analysis": {
+      "outcome": "GEOMETRICALLY_DEGENERATE",
+      "dominant_failure": "METADATA_UNCERTAINTY",
+      "secondary_failure": null,
+      "rejection_reasons": [
+        "Metadata Uncertainty: Native GSD is UNKNOWN for one or both products"
+      ],
+      "evidence_breakdown": {
+        "candidate_matches": 624,
+        "inliers": 602,
+        "inlier_ratio": 0.9647435897435898,
+        "mean_reprojection_error_px": 0.41667058985583294,
+        "spatial_coverage_ratio": 0.9208502660560798,
+        "condition_number": 1.0063024566873402,
+        "gsd_status": "UNKNOWN",
+        "detected_failure_count": 1
+      },
+      "explanation": "Candidate matches produce ill-conditioned or non-plausible planar homography: Metadata Uncertainty: Native GSD is UNKNOWN for one or both products"
+    }
+  },
+  {
+    "pair_id": "SYNTH_CTRL_OHRC_LRO_001",
+    "matcher": "ORB",
+    "status": "GEOMETRICALLY_DEGENERATE",
+    "failure_analysis": {
+      "outcome": "GEOMETRICALLY_DEGENERATE",
+      "dominant_failure": "METADATA_UNCERTAINTY",
+      "secondary_failure": null,
+      "rejection_reasons": [
+        "Metadata Uncertainty: Native GSD is UNKNOWN for one or both products"
+      ],
+      "evidence_breakdown": {
+        "candidate_matches": 692,
+        "inliers": 637,
+        "inlier_ratio": 0.9205202312138728,
+        "mean_reprojection_error_px": 0.5728155902068193,
+        "spatial_coverage_ratio": 0.6439733549102191,
+        "condition_number": 1.432973063155113,
+        "gsd_status": "UNKNOWN",
+        "detected_failure_count": 1
+      },
+      "explanation": "Candidate matches produce ill-conditioned or non-plausible planar homography: Metadata Uncertainty: Native GSD is UNKNOWN for one or both products"
+    }
+  },
+  {
+    "pair_id": "SYNTH_CTRL_OHRC_LRO_001",
+    "matcher": "SUPERPOINT",
+    "status": "GEOMETRICALLY_DEGENERATE",
+    "failure_analysis": {
+      "outcome": "GEOMETRICALLY_DEGENERATE",
+      "dominant_failure": "METADATA_UNCERTAINTY",
+      "secondary_failure": null,
+      "rejection_reasons": [
+        "Metadata Uncertainty: Native GSD is UNKNOWN for one or both products"
+      ],
+      "evidence_breakdown": {
+        "candidate_matches": 789,
+        "inliers": 751,
+        "inlier_ratio": 0.9518377693282636,
+        "mean_reprojection_error_px": 0.42593228600356975,
+        "spatial_coverage_ratio": 0.9230038539038333,
+        "condition_number": 1.0151611466556765,
+        "gsd_status": "UNKNOWN",
+        "detected_failure_count": 1
+      },
+      "explanation": "Candidate matches produce ill-conditioned or non-plausible planar homography: Metadata Uncertainty: Native GSD is UNKNOWN for one or both products"
+    }
+  },
+  {
+    "pair_id": "SYNTH_CTRL_OHRC_LRO_001",
+    "matcher": "LOFTR",
+    "status": "GEOMETRICALLY_DEGENERATE",
+    "failure_analysis": {
+      "outcome": "GEOMETRICALLY_DEGENERATE",
+      "dominant_failure": "METADATA_UNCERTAINTY",
+      "secondary_failure": null,
+      "rejection_reasons": [
+        "Metadata Uncertainty: Native GSD is UNKNOWN for one or both products"
+      ],
+      "evidence_breakdown": {
+        "candidate_matches": 914,
+        "inliers": 869,
+        "inlier_ratio": 0.9507658643326039,
+        "mean_reprojection_error_px": 0.43067664971028485,
+        "spatial_coverage_ratio": 0.9248890450765817,
+        "condition_number": 1.0317409027601558,
+        "gsd_status": "UNKNOWN",
+        "detected_failure_count": 1
+      },
+      "explanation": "Candidate matches produce ill-conditioned or non-plausible planar homography: Metadata Uncertainty: Native GSD is UNKNOWN for one or both products"
+    }
+  },
+  {
+    "pair_id": "SYNTH_CTRL_OHRC_LRO_001",
+    "matcher": "RIFT",
+    "status": "GEOMETRICALLY_DEGENERATE",
+    "failure_analysis": {
+      "outcome": "GEOMETRICALLY_DEGENERATE",
+      "dominant_failure": "METADATA_UNCERTAINTY",
+      "secondary_failure": null,
+      "rejection_reasons": [
+        "Metadata Uncertainty: Native GSD is UNKNOWN for one or both products"
+      ],
+      "evidence_breakdown": {
+        "candidate_matches": 841,
+        "inliers": 789,
+        "inlier_ratio": 0.9381688466111772,
+        "mean_reprojection_error_px": 0.4254094503920366,
+        "spatial_coverage_ratio": 0.9257368136963995,
+        "condition_number": 1.0466210142943895,
+        "gsd_status": "UNKNOWN",
+        "detected_failure_count": 1
+      },
+      "explanation": "Candidate matches produce ill-conditioned or non-plausible planar homography: Metadata Uncertainty: Native GSD is UNKNOWN for one or both products"
+    }
+  }
+]

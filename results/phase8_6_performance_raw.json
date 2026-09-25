@@ -1,0 +1,144 @@
+{
+  "backend_startup_ms": 9.69,
+  "traced_peak_memory_mb": 0.12,
+  "process_cpu_percent": "NOT MEASURED (psutil not installed)",
+  "endpoints": {
+    "api_health": {
+      "method": "GET",
+      "url": "/api/system/health",
+      "status_code": 200,
+      "n_runs": 15,
+      "min_ms": 21.34,
+      "median_ms": 27.48,
+      "p95_ms": 318.64,
+      "p99_ms": 318.64,
+      "max_ms": 318.64,
+      "response_size_bytes": 310
+    },
+    "api_status": {
+      "method": "GET",
+      "url": "/api/system/status",
+      "status_code": 200,
+      "n_runs": 15,
+      "min_ms": 20.31,
+      "median_ms": 27.75,
+      "p95_ms": 48.36,
+      "p99_ms": 48.36,
+      "max_ms": 48.36,
+      "response_size_bytes": 749
+    },
+    "scenario_listing": {
+      "method": "GET",
+      "url": "/api/demo/scenarios",
+      "status_code": 200,
+      "n_runs": 15,
+      "min_ms": 16.08,
+      "median_ms": 20.79,
+      "p95_ms": 49.24,
+      "p99_ms": 49.24,
+      "max_ms": 49.24,
+      "response_size_bytes": 17593
+    },
+    "scenario_explanation": {
+      "method": "GET",
+      "url": "/api/demo/scenarios/SCENARIO-A/explanation",
+      "status_code": 200,
+      "n_runs": 15,
+      "min_ms": 18.93,
+      "median_ms": 20.34,
+      "p95_ms": 29.27,
+      "p99_ms": 29.27,
+      "max_ms": 29.27,
+      "response_size_bytes": 13600
+    },
+    "correspondence_retrieval": {
+      "method": "GET",
+      "url": "/api/correspondence",
+      "status_code": 200,
+      "n_runs": 15,
+      "min_ms": 42.32,
+      "median_ms": 61.24,
+      "p95_ms": 124.15,
+      "p99_ms": 124.15,
+      "max_ms": 124.15,
+      "response_size_bytes": 212225
+    },
+    "physical_verification_retrieval": {
+      "method": "GET",
+      "url": "/api/physical-verification/gates",
+      "status_code": 200,
+      "n_runs": 15,
+      "min_ms": 9.5,
+      "median_ms": 12.73,
+      "p95_ms": 16.97,
+      "p99_ms": 16.97,
+      "max_ms": 16.97,
+      "response_size_bytes": 2166
+    },
+    "evidence_retrieval": {
+      "method": "GET",
+      "url": "/api/evidence/dimensions",
+      "status_code": 200,
+      "n_runs": 15,
+      "min_ms": 8.6,
+      "median_ms": 10.51,
+      "p95_ms": 17.12,
+      "p99_ms": 17.12,
+      "max_ms": 17.12,
+      "response_size_bytes": 274
+    },
+    "uncertainty_retrieval": {
+      "method": "GET",
+      "url": "/api/uncertainty/summary",
+      "status_code": 200,
+      "n_runs": 15,
+      "min_ms": 17.48,
+      "median_ms": 19.65,
+      "p95_ms": 30.4,
+      "p99_ms": 30.4,
+      "max_ms": 30.4,
+      "response_size_bytes": 547
+    },
+    "knowledge_gap_retrieval": {
+      "method": "GET",
+      "url": "/api/knowledge-gaps/types",
+      "status_code": 200,
+      "n_runs": 15,
+      "min_ms": 7.25,
+      "median_ms": 9.44,
+      "p95_ms": 13.25,
+      "p99_ms": 13.25,
+      "max_ms": 13.25,
+      "response_size_bytes": 332
+    },
+    "recommendation_retrieval": {
+      "method": "GET",
+      "url": "/api/recommendations",
+      "status_code": 200,
+      "n_runs": 15,
+      "min_ms": 16.22,
+      "median_ms": 19.13,
+      "p95_ms": 37.92,
+      "p99_ms": 37.92,
+      "max_ms": 37.92,
+      "response_size_bytes": 11843
+    },
+    "world_model_retrieval": {
+      "method": "GET",
+      "url": "/api/world-model/entities",
+      "status_code": 200,
+      "n_runs": 15,
+      "min_ms": 15.73,
+      "median_ms": 16.68,
+      "p95_ms": 37.66,
+      "p99_ms": 37.66,
+      "max_ms": 37.66,
+      "response_size_bytes": 791
+    }
+  },
+  "unmeasured_metrics": {
+    "per_endpoint_cpu": "NOT MEASURED (sub-millisecond sampling noise)",
+    "per_endpoint_heap_delta": "NOT MEASURED (C-extensions in OpenCV/PyTorch mask Python GC stats)",
+    "system_cpu_utilization": "NOT MEASURED (external process profiler required)"
+  }
+}

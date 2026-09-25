@@ -1,0 +1,122 @@
+[
+  {
+    "pair_id": "SYNTH_CTRL_OHRC_LRO_001",
+    "matcher": "SIFT",
+    "status": "AMBIGUOUS",
+    "failure_analysis": {
+      "outcome": "AMBIGUOUS",
+      "dominant_failure": "METADATA_UNCERTAINTY",
+      "secondary_failure": null,
+      "rejection_reasons": [
+        "Metadata Uncertainty: Native GSD is UNKNOWN for one or both products"
+      ],
+      "evidence_breakdown": {
+        "candidate_matches": 637,
+        "inliers": 614,
+        "inlier_ratio": 0.9638932496075353,
+        "mean_reprojection_error_px": 0.40655783303597853,
+        "spatial_coverage_ratio": 0.9217286288755753,
+        "condition_number": 1.018626445678163,
+        "gsd_status": "UNKNOWN",
+        "detected_failure_count": 1
+      },
+      "explanation": "Candidate matches exhibit partial geometric alignment but exceed residual or spatial entropy limits."
+    }
+  },
+  {
+    "pair_id": "SYNTH_CTRL_OHRC_LRO_001",
+    "matcher": "ORB",
+    "status": "AMBIGUOUS",
+    "failure_analysis": {
+      "outcome": "AMBIGUOUS",
+      "dominant_failure": "METADATA_UNCERTAINTY",
+      "secondary_failure": null,
+      "rejection_reasons": [
+        "Metadata Uncertainty: Native GSD is UNKNOWN for one or both products"
+      ],
+      "evidence_breakdown": {
+        "candidate_matches": 692,
+        "inliers": 637,
+        "inlier_ratio": 0.9205202312138728,
+        "mean_reprojection_error_px": 0.5728149832582362,
+        "spatial_coverage_ratio": 0.6439733549102191,
+        "condition_number": 1.4329704243700097,
+        "gsd_status": "UNKNOWN",
+        "detected_failure_count": 1
+      },
+      "explanation": "Candidate matches exhibit partial geometric alignment but exceed residual or spatial entropy limits."
+    }
+  },
+  {
+    "pair_id": "SYNTH_CTRL_OHRC_LRO_001",
+    "matcher": "SUPERPOINT",
+    "status": "AMBIGUOUS",
+    "failure_analysis": {
+      "outcome": "AMBIGUOUS",
+      "dominant_failure": "METADATA_UNCERTAINTY",
+      "secondary_failure": null,
+      "rejection_reasons": [
+        "Metadata Uncertainty: Native GSD is UNKNOWN for one or both products"
+      ],
+      "evidence_breakdown": {
+        "candidate_matches": 791,
+        "inliers": 755,
+        "inlier_ratio": 0.95448798988622,
+        "mean_reprojection_error_px": 0.427677072718243,
+        "spatial_coverage_ratio": 0.9250208587519584,
+        "condition_number": 1.0222923014216023,
+        "gsd_status": "UNKNOWN",
+        "detected_failure_count": 1
+      },
+      "explanation": "Candidate matches exhibit partial geometric alignment but exceed residual or spatial entropy limits."
+    }
+  },
+  {
+    "pair_id": "SYNTH_CTRL_OHRC_LRO_001",
+    "matcher": "LOFTR",
+    "status": "AMBIGUOUS",
+    "failure_analysis": {
+      "outcome": "AMBIGUOUS",
+      "dominant_failure": "METADATA_UNCERTAINTY",
+      "secondary_failure": null,
+      "rejection_reasons": [
+        "Metadata Uncertainty: Native GSD is UNKNOWN for one or both products"
+      ],
+      "evidence_breakdown": {
+        "candidate_matches": 927,
+        "inliers": 883,
+        "inlier_ratio": 0.9525350593311759,
+        "mean_reprojection_error_px": 0.43829639003937837,
+        "spatial_coverage_ratio": 0.9236412267966861,
+        "condition_number": 1.0788796218908692,
+        "gsd_status": "UNKNOWN",
+        "detected_failure_count": 1
+      },
+      "explanation": "Candidate matches exhibit partial geometric alignment but exceed residual or spatial entropy limits."
+    }
+  },
+  {
+    "pair_id": "SYNTH_CTRL_OHRC_LRO_001",
+    "matcher": "RIFT",
+    "status": "AMBIGUOUS",
+    "failure_analysis": {
+      "outcome": "AMBIGUOUS",
+      "dominant_failure": "METADATA_UNCERTAINTY",
+      "secondary_failure": null,
+      "rejection_reasons": [
+        "Metadata Uncertainty: Native GSD is UNKNOWN for one or both products"
+      ],
+      "evidence_breakdown": {
+        "candidate_matches": 863,
+        "inliers": 802,
+        "inlier_ratio": 0.929316338354577,
+        "mean_reprojection_error_px": 0.4306289419780015,
+        "spatial_coverage_ratio": 0.9269552873005795,
+        "condition_number": 1.0049184209057158,
+        "gsd_status": "UNKNOWN",
+        "detected_failure_count": 1
+      },
+      "explanation": "Candidate matches exhibit partial geometric alignment but exceed residual or spatial entropy limits."
+    }
+  }
+]

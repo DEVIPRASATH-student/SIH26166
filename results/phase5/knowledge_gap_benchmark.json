@@ -1,0 +1,66 @@
+{
+  "benchmark_name": "Phase 5 Knowledge-Gap Benchmark",
+  "total_scenarios": 8,
+  "passed_scenarios": 8,
+  "pass_rate": 1.0,
+  "all_passed": true,
+  "scenarios": [
+    {
+      "scenario_index": 1,
+      "target_gap_type": "MISSING_SPECTRAL_VALIDATION",
+      "passed": true,
+      "detected_count": 4,
+      "blocking_reason": "NO_SPECTRAL_DATA_ATTACHED"
+    },
+    {
+      "scenario_index": 2,
+      "target_gap_type": "MISSING_TEMPORAL_OBSERVATION",
+      "passed": true,
+      "detected_count": 4,
+      "description": "Single-epoch acquisition triggers temporal gap"
+    },
+    {
+      "scenario_index": 3,
+      "target_gap_type": "MISSING_GEOMETRIC_VALIDATION",
+      "passed": true,
+      "detected_count": 3,
+      "description": "Unvalidated candidate feature"
+    },
+    {
+      "scenario_index": 4,
+      "target_gap_type": "MISSING_TERRAIN_VALIDATION",
+      "passed": true,
+      "detected_count": 3,
+      "required_evidence": "SLDEM2015 elevation or TMC-2 stereo profile"
+    },
+    {
+      "scenario_index": 5,
+      "target_gap_type": "MISSING_MODALITY",
+      "passed": true,
+      "detected_count": 4,
+      "description": "Hyperspectral modality missing"
+    },
+    {
+      "scenario_index": 6,
+      "target_gap_type": "INSUFFICIENT_CORRESPONDENCE",
+      "passed": true,
+      "detected_count": 4,
+      "description": "Mono-sensor observation lacks independent cross-sensor link"
+    },
+    {
+      "scenario_index": 7,
+      "target_gap_type": "FOOTPRINT_NON_OVERLAP",
+      "passed": true,
+      "detected_count": 4,
+      "blocking_reason": "PHYSICAL_FOOTPRINT_SEPARATION"
+    },
+    {
+      "scenario_index": 8,
+      "target_gap_type": "UNCERTAINTY_TOO_HIGH",
+      "passed": true,
+      "detected_count": 4,
+      "description": "Spatial uncertainty (75.0m) exceeds scientific tolerance (50.0m)"
+    }
+  ],
+  "timestamp": "2026-09-23T18:46:32.722501"
+}

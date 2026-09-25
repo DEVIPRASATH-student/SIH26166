@@ -1,0 +1,547 @@
+[
+  {
+    "pair_id": "SYNTH_CTRL_OHRC_LRO_001",
+    "matcher": "SIFT",
+    "source_sensor": "OHRC_SYNTH",
+    "target_sensor": "LRO_NAC_SYNTH",
+    "is_real_data": false,
+    "ground_truth_level": "LEVEL_4_SYNTHETIC_CONTROLLED_TRANSFORM",
+    "status": "AMBIGUOUS",
+    "rejection_reason": "Metadata Uncertainty: Native GSD is UNKNOWN for one or both products",
+    "metrics": {
+      "keypoints_source": 2000,
+      "keypoints_target": 2000,
+      "candidate_matches": 637,
+      "ratio_test_matches": 637,
+      "geometric_inliers": 614,
+      "inlier_ratio": 0.9639,
+      "mean_reprojection_error_px": 0.407,
+      "median_reprojection_error_px": 0.287,
+      "rmse_px": 0.569,
+      "homography_condition_number": 1.02,
+      "spatial_coverage_ratio": 0.9217,
+      "convex_hull_area_ratio": 0.9217,
+      "spatial_entropy": 0.987,
+      "native_gsd_source_m": null,
+      "native_gsd_target_m": null,
+      "gsd_status": "UNKNOWN",
+      "estimated_scale_ratio": "UNKNOWN",
+      "scale_ratio_status": "UNKNOWN",
+      "feature_ambiguity": 0.556,
+      "feature_sparsity": 0.0,
+      "overlap_confidence": 0.954,
+      "matcher_name": "SIFT",
+      "matcher_implementation_status": "REAL",
+      "preprocessing_time_sec": 0.1909,
+      "matching_time_sec": 0.2146,
+      "verification_time_sec": 0.0063,
+      "total_processing_time_sec": 0.4118
+    },
+    "failure_analysis": {
+      "outcome": "AMBIGUOUS",
+      "dominant_failure": "METADATA_UNCERTAINTY",
+      "secondary_failure": null,
+      "rejection_reasons": [
+        "Metadata Uncertainty: Native GSD is UNKNOWN for one or both products"
+      ],
+      "evidence_breakdown": {
+        "candidate_matches": 637,
+        "inliers": 614,
+        "inlier_ratio": 0.9638932496075353,
+        "mean_reprojection_error_px": 0.40655783303597853,
+        "spatial_coverage_ratio": 0.9217286288755753,
+        "condition_number": 1.018626445678163,
+        "gsd_status": "UNKNOWN",
+        "detected_failure_count": 1
+      },
+      "explanation": "Candidate matches exhibit partial geometric alignment but exceed residual or spatial entropy limits."
+    },
+    "iirs_metadata": {},
+    "provenance": {
+      "source": {
+        "source_name": "ISSDC / Chandrayaan-2",
+        "original_filename": "synth_ohrc_control.tif",
+        "product_id": "synth_ohrc_control",
+        "ingestion_timestamp": "2026-09-13 10:08:53.559053",
+        "sha256_checksum": "2057227d9fa2a1df2ee2fde70ff4739a8e89a1fe4caa82e4870ccf04eb936d44",
+        "metadata_extraction_status": "SUCCESS",
+        "processing_history": [
+          {
+            "step": "INGESTION",
+            "timestamp": "2026-09-13T10:08:53.559057",
+            "details": "File ingested from ISSDC / Chandrayaan-2"
+          },
+          {
+            "step": "CORRESPONDENCE_VIEW_EXTRACTION",
+            "timestamp": "2026-09-13T10:08:53.577168",
+            "parameters": {
+              "selected_band": 0,
+              "source_dtype": "uint8"
+            },
+            "description": "Created non-destructive 8-bit visualization view for correspondence matchers"
+          }
+        ]
+      },
+      "target": {
+        "source_name": "Generic Raster Loader",
+        "original_filename": "synth_lro_control.tif",
+        "product_id": "synth_lro_control",
+        "ingestion_timestamp": "2026-09-13 10:08:53.576593",
+        "sha256_checksum": "711e6f6b1eb49f5167525bcead3b6047d74bbba51aed1518521e76570ffe4b33",
+        "metadata_extraction_status": "SUCCESS",
+        "processing_history": [
+          {
+            "step": "INGESTION",
+            "timestamp": "2026-09-13T10:08:53.576598",
+            "details": "File ingested from Generic Raster Loader"
+          },
+          {
+            "step": "CORRESPONDENCE_VIEW_EXTRACTION",
+            "timestamp": "2026-09-13T10:08:53.577269",
+            "parameters": {
+              "selected_band": 0,
+              "source_dtype": "uint8"
+            },
+            "description": "Created non-destructive 8-bit visualization view for correspondence matchers"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pair_id": "SYNTH_CTRL_OHRC_LRO_001",
+    "matcher": "ORB",
+    "source_sensor": "OHRC_SYNTH",
+    "target_sensor": "LRO_NAC_SYNTH",
+    "is_real_data": false,
+    "ground_truth_level": "LEVEL_4_SYNTHETIC_CONTROLLED_TRANSFORM",
+    "status": "AMBIGUOUS",
+    "rejection_reason": "Metadata Uncertainty: Native GSD is UNKNOWN for one or both products",
+    "metrics": {
+      "keypoints_source": 2471,
+      "keypoints_target": 2474,
+      "candidate_matches": 692,
+      "ratio_test_matches": 692,
+      "geometric_inliers": 637,
+      "inlier_ratio": 0.9205,
+      "mean_reprojection_error_px": 0.573,
+      "median_reprojection_error_px": 0.083,
+      "rmse_px": 1.034,
+      "homography_condition_number": 1.43,
+      "spatial_coverage_ratio": 0.644,
+      "convex_hull_area_ratio": 0.644,
+      "spatial_entropy": 0.935,
+      "native_gsd_source_m": null,
+      "native_gsd_target_m": null,
+      "gsd_status": "UNKNOWN",
+      "estimated_scale_ratio": "UNKNOWN",
+      "scale_ratio_status": "UNKNOWN",
+      "feature_ambiguity": 0.591,
+      "feature_sparsity": 0.0,
+      "overlap_confidence": 0.936,
+      "matcher_name": "ORB",
+      "matcher_implementation_status": "REAL",
+      "preprocessing_time_sec": 0.0084,
+      "matching_time_sec": 0.2789,
+      "verification_time_sec": 0.0136,
+      "total_processing_time_sec": 0.3009
+    },
+    "failure_analysis": {
+      "outcome": "AMBIGUOUS",
+      "dominant_failure": "METADATA_UNCERTAINTY",
+      "secondary_failure": null,
+      "rejection_reasons": [
+        "Metadata Uncertainty: Native GSD is UNKNOWN for one or both products"
+      ],
+      "evidence_breakdown": {
+        "candidate_matches": 692,
+        "inliers": 637,
+        "inlier_ratio": 0.9205202312138728,
+        "mean_reprojection_error_px": 0.5728149832582362,
+        "spatial_coverage_ratio": 0.6439733549102191,
+        "condition_number": 1.4329704243700097,
+        "gsd_status": "UNKNOWN",
+        "detected_failure_count": 1
+      },
+      "explanation": "Candidate matches exhibit partial geometric alignment but exceed residual or spatial entropy limits."
+    },
+    "iirs_metadata": {},
+    "provenance": {
+      "source": {
+        "source_name": "ISSDC / Chandrayaan-2",
+        "original_filename": "synth_ohrc_control.tif",
+        "product_id": "synth_ohrc_control",
+        "ingestion_timestamp": "2026-09-13 10:08:53.815645",
+        "sha256_checksum": "2057227d9fa2a1df2ee2fde70ff4739a8e89a1fe4caa82e4870ccf04eb936d44",
+        "metadata_extraction_status": "SUCCESS",
+        "processing_history": [
+          {
+            "step": "INGESTION",
+            "timestamp": "2026-09-13T10:08:53.815648",
+            "details": "File ingested from ISSDC / Chandrayaan-2"
+          },
+          {
+            "step": "CORRESPONDENCE_VIEW_EXTRACTION",
+            "timestamp": "2026-09-13T10:08:53.819398",
+            "parameters": {
+              "selected_band": 0,
+              "source_dtype": "uint8"
+            },
+            "description": "Created non-destructive 8-bit visualization view for correspondence matchers"
+          }
+        ]
+      },
+      "target": {
+        "source_name": "Generic Raster Loader",
+        "original_filename": "synth_lro_control.tif",
+        "product_id": "synth_lro_control",
+        "ingestion_timestamp": "2026-09-13 10:08:53.819040",
+        "sha256_checksum": "711e6f6b1eb49f5167525bcead3b6047d74bbba51aed1518521e76570ffe4b33",
+        "metadata_extraction_status": "SUCCESS",
+        "processing_history": [
+          {
+            "step": "INGESTION",
+            "timestamp": "2026-09-13T10:08:53.819044",
+            "details": "File ingested from Generic Raster Loader"
+          },
+          {
+            "step": "CORRESPONDENCE_VIEW_EXTRACTION",
+            "timestamp": "2026-09-13T10:08:53.819438",
+            "parameters": {
+              "selected_band": 0,
+              "source_dtype": "uint8"
+            },
+            "description": "Created non-destructive 8-bit visualization view for correspondence matchers"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pair_id": "SYNTH_CTRL_OHRC_LRO_001",
+    "matcher": "SUPERPOINT",
+    "source_sensor": "OHRC_SYNTH",
+    "target_sensor": "LRO_NAC_SYNTH",
+    "is_real_data": false,
+    "ground_truth_level": "LEVEL_4_SYNTHETIC_CONTROLLED_TRANSFORM",
+    "status": "AMBIGUOUS",
+    "rejection_reason": "Metadata Uncertainty: Native GSD is UNKNOWN for one or both products",
+    "metrics": {
+      "keypoints_source": 2500,
+      "keypoints_target": 2500,
+      "candidate_matches": 791,
+      "ratio_test_matches": 791,
+      "geometric_inliers": 755,
+      "inlier_ratio": 0.9545,
+      "mean_reprojection_error_px": 0.428,
+      "median_reprojection_error_px": 0.303,
+      "rmse_px": 0.597,
+      "homography_condition_number": 1.02,
+      "spatial_coverage_ratio": 0.925,
+      "convex_hull_area_ratio": 0.925,
+      "spatial_entropy": 0.989,
+      "native_gsd_source_m": null,
+      "native_gsd_target_m": null,
+      "gsd_status": "UNKNOWN",
+      "estimated_scale_ratio": "UNKNOWN",
+      "scale_ratio_status": "UNKNOWN",
+      "feature_ambiguity": 0.555,
+      "feature_sparsity": 0.0,
+      "overlap_confidence": 0.952,
+      "matcher_name": "SUPERPOINT",
+      "matcher_implementation_status": "FALLBACK",
+      "preprocessing_time_sec": 0.0107,
+      "matching_time_sec": 0.218,
+      "verification_time_sec": 0.0086,
+      "total_processing_time_sec": 0.2372
+    },
+    "failure_analysis": {
+      "outcome": "AMBIGUOUS",
+      "dominant_failure": "METADATA_UNCERTAINTY",
+      "secondary_failure": null,
+      "rejection_reasons": [
+        "Metadata Uncertainty: Native GSD is UNKNOWN for one or both products"
+      ],
+      "evidence_breakdown": {
+        "candidate_matches": 791,
+        "inliers": 755,
+        "inlier_ratio": 0.95448798988622,
+        "mean_reprojection_error_px": 0.427677072718243,
+        "spatial_coverage_ratio": 0.9250208587519584,
+        "condition_number": 1.0222923014216023,
+        "gsd_status": "UNKNOWN",
+        "detected_failure_count": 1
+      },
+      "explanation": "Candidate matches exhibit partial geometric alignment but exceed residual or spatial entropy limits."
+    },
+    "iirs_metadata": {},
+    "provenance": {
+      "source": {
+        "source_name": "ISSDC / Chandrayaan-2",
+        "original_filename": "synth_ohrc_control.tif",
+        "product_id": "synth_ohrc_control",
+        "ingestion_timestamp": "2026-09-13 10:08:54.132288",
+        "sha256_checksum": "2057227d9fa2a1df2ee2fde70ff4739a8e89a1fe4caa82e4870ccf04eb936d44",
+        "metadata_extraction_status": "SUCCESS",
+        "processing_history": [
+          {
+            "step": "INGESTION",
+            "timestamp": "2026-09-13T10:08:54.132327",
+            "details": "File ingested from ISSDC / Chandrayaan-2"
+          },
+          {
+            "step": "CORRESPONDENCE_VIEW_EXTRACTION",
+            "timestamp": "2026-09-13T10:08:54.137617",
+            "parameters": {
+              "selected_band": 0,
+              "source_dtype": "uint8"
+            },
+            "description": "Created non-destructive 8-bit visualization view for correspondence matchers"
+          }
+        ]
+      },
+      "target": {
+        "source_name": "Generic Raster Loader",
+        "original_filename": "synth_lro_control.tif",
+        "product_id": "synth_lro_control",
+        "ingestion_timestamp": "2026-09-13 10:08:54.136817",
+        "sha256_checksum": "711e6f6b1eb49f5167525bcead3b6047d74bbba51aed1518521e76570ffe4b33",
+        "metadata_extraction_status": "SUCCESS",
+        "processing_history": [
+          {
+            "step": "INGESTION",
+            "timestamp": "2026-09-13T10:08:54.136826",
+            "details": "File ingested from Generic Raster Loader"
+          },
+          {
+            "step": "CORRESPONDENCE_VIEW_EXTRACTION",
+            "timestamp": "2026-09-13T10:08:54.137695",
+            "parameters": {
+              "selected_band": 0,
+              "source_dtype": "uint8"
+            },
+            "description": "Created non-destructive 8-bit visualization view for correspondence matchers"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pair_id": "SYNTH_CTRL_OHRC_LRO_001",
+    "matcher": "LOFTR",
+    "source_sensor": "OHRC_SYNTH",
+    "target_sensor": "LRO_NAC_SYNTH",
+    "is_real_data": false,
+    "ground_truth_level": "LEVEL_4_SYNTHETIC_CONTROLLED_TRANSFORM",
+    "status": "AMBIGUOUS",
+    "rejection_reason": "Metadata Uncertainty: Native GSD is UNKNOWN for one or both products",
+    "metrics": {
+      "keypoints_source": 3000,
+      "keypoints_target": 3000,
+      "candidate_matches": 927,
+      "ratio_test_matches": 927,
+      "geometric_inliers": 883,
+      "inlier_ratio": 0.9525,
+      "mean_reprojection_error_px": 0.438,
+      "median_reprojection_error_px": 0.307,
+      "rmse_px": 0.623,
+      "homography_condition_number": 1.08,
+      "spatial_coverage_ratio": 0.9236,
+      "convex_hull_area_ratio": 0.9236,
+      "spatial_entropy": 0.988,
+      "native_gsd_source_m": null,
+      "native_gsd_target_m": null,
+      "gsd_status": "UNKNOWN",
+      "estimated_scale_ratio": "UNKNOWN",
+      "scale_ratio_status": "UNKNOWN",
+      "feature_ambiguity": 0.556,
+      "feature_sparsity": 0.0,
+      "overlap_confidence": 0.951,
+      "matcher_name": "LOFTR",
+      "matcher_implementation_status": "FALLBACK",
+      "preprocessing_time_sec": 0.0097,
+      "matching_time_sec": 0.2557,
+      "verification_time_sec": 0.0121,
+      "total_processing_time_sec": 0.2775
+    },
+    "failure_analysis": {
+      "outcome": "AMBIGUOUS",
+      "dominant_failure": "METADATA_UNCERTAINTY",
+      "secondary_failure": null,
+      "rejection_reasons": [
+        "Metadata Uncertainty: Native GSD is UNKNOWN for one or both products"
+      ],
+      "evidence_breakdown": {
+        "candidate_matches": 927,
+        "inliers": 883,
+        "inlier_ratio": 0.9525350593311759,
+        "mean_reprojection_error_px": 0.43829639003937837,
+        "spatial_coverage_ratio": 0.9236412267966861,
+        "condition_number": 1.0788796218908692,
+        "gsd_status": "UNKNOWN",
+        "detected_failure_count": 1
+      },
+      "explanation": "Candidate matches exhibit partial geometric alignment but exceed residual or spatial entropy limits."
+    },
+    "iirs_metadata": {},
+    "provenance": {
+      "source": {
+        "source_name": "ISSDC / Chandrayaan-2",
+        "original_filename": "synth_ohrc_control.tif",
+        "product_id": "synth_ohrc_control",
+        "ingestion_timestamp": "2026-09-13 10:08:54.379584",
+        "sha256_checksum": "2057227d9fa2a1df2ee2fde70ff4739a8e89a1fe4caa82e4870ccf04eb936d44",
+        "metadata_extraction_status": "SUCCESS",
+        "processing_history": [
+          {
+            "step": "INGESTION",
+            "timestamp": "2026-09-13T10:08:54.379590",
+            "details": "File ingested from ISSDC / Chandrayaan-2"
+          },
+          {
+            "step": "CORRESPONDENCE_VIEW_EXTRACTION",
+            "timestamp": "2026-09-13T10:08:54.384607",
+            "parameters": {
+              "selected_band": 0,
+              "source_dtype": "uint8"
+            },
+            "description": "Created non-destructive 8-bit visualization view for correspondence matchers"
+          }
+        ]
+      },
+      "target": {
+        "source_name": "Generic Raster Loader",
+        "original_filename": "synth_lro_control.tif",
+        "product_id": "synth_lro_control",
+        "ingestion_timestamp": "2026-09-13 10:08:54.384310",
+        "sha256_checksum": "711e6f6b1eb49f5167525bcead3b6047d74bbba51aed1518521e76570ffe4b33",
+        "metadata_extraction_status": "SUCCESS",
+        "processing_history": [
+          {
+            "step": "INGESTION",
+            "timestamp": "2026-09-13T10:08:54.384313",
+            "details": "File ingested from Generic Raster Loader"
+          },
+          {
+            "step": "CORRESPONDENCE_VIEW_EXTRACTION",
+            "timestamp": "2026-09-13T10:08:54.384680",
+            "parameters": {
+              "selected_band": 0,
+              "source_dtype": "uint8"
+            },
+            "description": "Created non-destructive 8-bit visualization view for correspondence matchers"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pair_id": "SYNTH_CTRL_OHRC_LRO_001",
+    "matcher": "RIFT",
+    "source_sensor": "OHRC_SYNTH",
+    "target_sensor": "LRO_NAC_SYNTH",
+    "is_real_data": false,
+    "ground_truth_level": "LEVEL_4_SYNTHETIC_CONTROLLED_TRANSFORM",
+    "status": "AMBIGUOUS",
+    "rejection_reason": "Metadata Uncertainty: Native GSD is UNKNOWN for one or both products",
+    "metrics": {
+      "keypoints_source": 2500,
+      "keypoints_target": 2500,
+      "candidate_matches": 863,
+      "ratio_test_matches": 863,
+      "geometric_inliers": 802,
+      "inlier_ratio": 0.9293,
+      "mean_reprojection_error_px": 0.431,
+      "median_reprojection_error_px": 0.301,
+      "rmse_px": 0.603,
+      "homography_condition_number": 1.0,
+      "spatial_coverage_ratio": 0.927,
+      "convex_hull_area_ratio": 0.927,
+      "spatial_entropy": 0.987,
+      "native_gsd_source_m": null,
+      "native_gsd_target_m": null,
+      "gsd_status": "UNKNOWN",
+      "estimated_scale_ratio": "UNKNOWN",
+      "scale_ratio_status": "UNKNOWN",
+      "feature_ambiguity": 0.561,
+      "feature_sparsity": 0.0,
+      "overlap_confidence": 0.952,
+      "matcher_name": "RIFT",
+      "matcher_implementation_status": "SIMULATED",
+      "preprocessing_time_sec": 0.0077,
+      "matching_time_sec": 0.1963,
+      "verification_time_sec": 0.008,
+      "total_processing_time_sec": 0.2121
+    },
+    "failure_analysis": {
+      "outcome": "AMBIGUOUS",
+      "dominant_failure": "METADATA_UNCERTAINTY",
+      "secondary_failure": null,
+      "rejection_reasons": [
+        "Metadata Uncertainty: Native GSD is UNKNOWN for one or both products"
+      ],
+      "evidence_breakdown": {
+        "candidate_matches": 863,
+        "inliers": 802,
+        "inlier_ratio": 0.929316338354577,
+        "mean_reprojection_error_px": 0.4306289419780015,
+        "spatial_coverage_ratio": 0.9269552873005795,
+        "condition_number": 1.0049184209057158,
+        "gsd_status": "UNKNOWN",
+        "detected_failure_count": 1
+      },
+      "explanation": "Candidate matches exhibit partial geometric alignment but exceed residual or spatial entropy limits."
+    },
+    "iirs_metadata": {},
+    "provenance": {
+      "source": {
+        "source_name": "ISSDC / Chandrayaan-2",
+        "original_filename": "synth_ohrc_control.tif",
+        "product_id": "synth_ohrc_control",
+        "ingestion_timestamp": "2026-09-13 10:08:54.666250",
+        "sha256_checksum": "2057227d9fa2a1df2ee2fde70ff4739a8e89a1fe4caa82e4870ccf04eb936d44",
+        "metadata_extraction_status": "SUCCESS",
+        "processing_history": [
+          {
+            "step": "INGESTION",
+            "timestamp": "2026-09-13T10:08:54.666255",
+            "details": "File ingested from ISSDC / Chandrayaan-2"
+          },
+          {
+            "step": "CORRESPONDENCE_VIEW_EXTRACTION",
+            "timestamp": "2026-09-13T10:08:54.670769",
+            "parameters": {
+              "selected_band": 0,
+              "source_dtype": "uint8"
+            },
+            "description": "Created non-destructive 8-bit visualization view for correspondence matchers"
+          }
+        ]
+      },
+      "target": {
+        "source_name": "Generic Raster Loader",
+        "original_filename": "synth_lro_control.tif",
+        "product_id": "synth_lro_control",
+        "ingestion_timestamp": "2026-09-13 10:08:54.670383",
+        "sha256_checksum": "711e6f6b1eb49f5167525bcead3b6047d74bbba51aed1518521e76570ffe4b33",
+        "metadata_extraction_status": "SUCCESS",
+        "processing_history": [
+          {
+            "step": "INGESTION",
+            "timestamp": "2026-09-13T10:08:54.670387",
+            "details": "File ingested from Generic Raster Loader"
+          },
+          {
+            "step": "CORRESPONDENCE_VIEW_EXTRACTION",
+            "timestamp": "2026-09-13T10:08:54.670809",
+            "parameters": {
+              "selected_band": 0,
+              "source_dtype": "uint8"
+            },
+            "description": "Created non-destructive 8-bit visualization view for correspondence matchers"
+          }
+        ]
+      }
+    }
+  }
+]

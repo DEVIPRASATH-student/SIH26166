@@ -1,0 +1,161 @@
+{
+  "project": "LunarSynapse",
+  "phase": "8.7",
+  "status": "REPRODUCIBILITY_VALIDATED",
+  "title": "Physics-Aware, Self-Evolving Multi-Modal Lunar World Model",
+  "sih_problem": "SIH26166",
+  "generated_at": "2026-09-24T23:47:00Z",
+  "runtime_environment": {
+    "os": "Windows (win32)",
+    "python_version": "3.13.7",
+    "node_version": "20.x (npm 10.x)",
+    "database": "SQLite 3 (transactional ACID)",
+    "source_revision": "local-master-verified"
+  },
+  "package_dependencies": {
+    "backend": {
+      "fastapi": ">=0.115.0",
+      "uvicorn": ">=0.30.0",
+      "pydantic": ">=2.8.0",
+      "sqlalchemy": ">=2.0.0",
+      "opencv-python": ">=4.10.0",
+      "scipy": ">=1.13.0",
+      "numpy": ">=1.26.0",
+      "networkx": ">=3.3",
+      "scikit-learn": ">=1.5.0",
+      "pytest": ">=8.3.0"
+    },
+    "frontend": {
+      "react": "18.3.1",
+      "react-dom": "18.3.1",
+      "vite": "6.4.3",
+      "typescript": "5.5.3",
+      "tailwindcss": "3.4.10",
+      "lucide-react": "0.436.0",
+      "reactflow": "11.11.4"
+    }
+  },
+  "test_and_build_summary": {
+    "frontend_build": "SUCCESS (built in 5.39s)",
+    "total_regression_tests": 375,
+    "phase_8_6_reliability_tests": 17,
+    "phase_8_7_reproducibility_tests": 17,
+    "regression_failures": 0,
+    "regression_errors": 0
+  },
+  "raw_lunar_datasets": {
+    "path": "data/real/",
+    "integrity_status": "UNTOUCHED (0 bytes modified)",
+    "products": [
+      {
+        "instrument": "OHRC (Orbiter High Resolution Camera)",
+        "mission": "Chandrayaan-2",
+        "product_xml": "ch2_ohr_ncp_20210115t084420353_d_img_d18.xml",
+        "product_binary": "ch2_ohr_ncp_20210115t084420353_d_img_d18.img",
+        "gsd_meters_per_pixel": 0.25,
+        "calibrated_swath_width_km": 12.0
+      },
+      {
+        "instrument": "TMC-2 (Terrain Mapping Camera 2)",
+        "mission": "Chandrayaan-2",
+        "product_xml": "ch2_tmc_ncn_20200318t1349141011_d_img_d18.xml",
+        "product_binary": "ch2_tmc_ncn_20200318t1349141011_d_img_d18.img",
+        "gsd_meters_per_pixel": 5.0,
+        "calibrated_swath_width_km": 20.0
+      }
+    ]
+  },
+  "topographic_and_geometric_models": {
+    "dem_source": "SLDEM2015 / LOLA topographic reference model",
+    "elevation_range_m": [-9000, 11000],
+    "groundgrid_source": "Pushbroom flight geometry with calibrated SPICE ephemeris"
+  },
+  "immutable_physical_gates": [
+    {
+      "gate_id": "GATE1",
+      "gate_name": "INVALID_SOURCE_GROUNDGRID",
+      "description": "Verifies valid, non-singular flight pushbroom coordinates"
+    },
+    {
+      "gate_id": "GATE2",
+      "gate_name": "DEM_OUT_OF_BOUNDS_OR_NODATA",
+      "description": "SLDEM2015 elevation corridor and coverage verification"
+    },
+    {
+      "gate_id": "GATE3",
+      "gate_name": "TARGET_OUTSIDE_CALIBRATED_SWATH",
+      "description": "Sensor spatial footprint overlap and calibrated swath check"
+    },
+    {
+      "gate_id": "GATE4",
+      "gate_name": "TARGET_CLAMPED_TO_SWATH_BOUNDARY",
+      "description": "Boundary clamping and projection artifact detection"
+    },
+    {
+      "gate_id": "GATE5",
+      "gate_name": "TARGET_OUTSIDE_ELEVATION_CORRIDOR",
+      "description": "DEM elevation parallax bounds verification"
+    },
+    {
+      "gate_id": "GATE6",
+      "gate_name": "BIDIRECTIONAL_RESIDUAL_TOO_LARGE",
+      "description": "Ray-casting bidirectional consistency residual verification"
+    }
+  ],
+  "illumination_verification_separation": {
+    "status": "SEPARATE_EVIDENCE_MODULE",
+    "is_gate_5": false,
+    "description": "Sun-angle illumination verification operates in Phase 6.2 evidence fusion, NOT as Gate 5"
+  },
+  "demonstration_scenarios": [
+    {
+      "id": "SCENARIO-A",
+      "name": "Real Lunar Data Negative Control (OHRC vs TMC-2)",
+      "type": "REAL_LUNAR",
+      "provenance": "ISRO Chandrayaan-2 Flight Archive",
+      "expected_decision": "REJECTED (GATE3_TARGET_OUTSIDE_CALIBRATED_SWATH)",
+      "is_synthetic": false
+    },
+    {
+      "id": "SCENARIO-B",
+      "name": "Synthetic Multi-Scale Invariant Control (20x GSD)",
+      "type": "SYNTHETIC",
+      "provenance": "Controlled Synthetic Simulator",
+      "expected_decision": "PASS / VERIFIED",
+      "is_synthetic": true
+    },
+    {
+      "id": "SCENARIO-C",
+      "name": "Synthetic Sun-Angle & Illumination Deception Trap",
+      "type": "SYNTHETIC",
+      "provenance": "Controlled Synthetic Simulator",
+      "expected_decision": "REJECTED (Solar Phase / Illumination Conflict)",
+      "is_synthetic": true
+    },
+    {
+      "id": "SCENARIO-D",
+      "name": "Synthetic Hostile Geometric Swath Boundary Control",
+      "type": "SYNTHETIC",
+      "provenance": "Controlled Synthetic Simulator",
+      "expected_decision": "REJECTED (GATE3_TARGET_OUTSIDE_CALIBRATED_SWATH)",
+      "is_synthetic": true
+    },
+    {
+      "id": "SCENARIO-E",
+      "name": "Synthetic Degenerate Flat Terrain Elevation Control",
+      "type": "SYNTHETIC",
+      "provenance": "Controlled Synthetic Simulator",
+      "expected_decision": "REJECTED (GATE5_TARGET_OUTSIDE_ELEVATION_CORRIDOR)",
+      "is_synthetic": true
+    }
+  ],
+  "scientific_limitations": [
+    "REAL-DATA ACCURACY = N/A",
+    "PHYSICAL CORRESPONDENCE NOT VALIDATED for evaluated real pair",
+    "REAL-LUNAR EMPIRICAL UNCERTAINTY CALIBRATION NOT ESTABLISHED",
+    "NO INDEPENDENT REAL-LUNAR TIE-POINT GROUND TRUTH",
+    "SYNTHETIC POSITIVE CONTROL DOES NOT ESTABLISH REAL-LUNAR ACCURACY",
+    "ACTIVE OBSERVATION RECOMMENDATIONS ARE DECISION-SUPPORT PROPOSALS, NOT SPACECRAFT TASKING",
+    "DEPLOYMENT ARCHITECTURE DOCUMENTED — PRODUCTION DEPLOYMENT NOT VALIDATED"
+  ]
+}

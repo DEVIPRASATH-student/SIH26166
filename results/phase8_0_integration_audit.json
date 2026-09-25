@@ -1,0 +1,87 @@
+{
+  "phase": "8.0",
+  "status": "PHASE8_0_READY_WITH_BLOCKERS",
+  "audit_type": "READ_ONLY_INTEGRATION_AUDIT",
+  "production_code_changes": 0,
+  "raw_data_modifications": 0,
+  "scientific_invariants_preserved": {
+    "phase_7_status_preserved": true,
+    "physical_correspondence_not_validated": true,
+    "real_data_accuracy_na": true,
+    "unknown_not_negative": true,
+    "entity_association_not_correspondence": true,
+    "real_synthetic_separation": "PARTIAL"
+  },
+  "blockers_summary": {
+    "P0": 1,
+    "P1": 2,
+    "P2": 2,
+    "P3": 1
+  },
+  "blockers_detail": [
+    {
+      "id": "BLK-P0-01",
+      "severity": "P0",
+      "category": "SCIENTIFIC_SAFETY",
+      "description": "DemoService (/demo/run) generates synthetic procedural craters and marks them without explicit synthetic prefixes, and CorrespondenceService performs planar 2D matching rather than invoking Phase 3 3D PhysicalCandidateEngine for real pairs.",
+      "remediation": "Phase 8.1 must route real OHRC/TMC-2 through GroundGrid/PhysicalCandidateEngine returning FOOTPRINT_NON_OVERLAP and flag procedural demo observations explicitly as is_synthetic=True."
+    },
+    {
+      "id": "BLK-P1-01",
+      "severity": "P1",
+      "category": "PIPELINE_INTEGRATION",
+      "description": "Backend API (/correspondence/analyze) is decoupled from Phase 3 GroundGrid and 3D ray-traced parallax epipolar corridors (operates only on in-memory 2D arrays).",
+      "remediation": "Create unified PipelineController bridging Phase 3 GroundGrid/DEM with Backend Services."
+    },
+    {
+      "id": "BLK-P1-02",
+      "severity": "P1",
+      "category": "TEST_ARCHITECTURE",
+      "description": "E2E_INTEGRATION_TEST_MISSING: Repository has 299 isolated unit/benchmark tests, but lacks an end-to-end integration test exercising HTTP client -> DB -> Pipeline -> Entity -> Gap -> NBO.",
+      "remediation": "Implement test_phase8_1_e2e_pipeline.py in Phase 8.1."
+    },
+    {
+      "id": "BLK-P2-01",
+      "severity": "P2",
+      "category": "DEMO_READINESS",
+      "description": "Frontend UI lacks dedicated tabs/views for the authoritative Phase 7.6 Real Lunar Non-Overlap Negative Control and Phase 7.9 Robustness Response Curves.",
+      "remediation": "Expose Phase 7 benchmark results and real-data negative control viewer in Phase 8.2."
+    },
+    {
+      "id": "BLK-P2-02",
+      "severity": "P2",
+      "category": "DEPLOYMENT",
+      "description": "Docker backend attempts volume-mounting large local data, which would fail if deployed on standard cloud serverless containers without object storage/tiling.",
+      "remediation": "Implement scientific worker architecture and lightweight tile caching in Phase 8.3."
+    },
+    {
+      "id": "BLK-P3-01",
+      "severity": "P3",
+      "category": "DOCUMENTATION",
+      "description": "README.md contains marketing phrasing ('Transforms disconnected observations... builds memory and reasoning') that needs context-bounding alongside authoritative reports.",
+      "remediation": "Harmonize README.md with Phase 7.12 limitations and create docs/DEMO_RUNBOOK.md."
+    }
+  ],
+  "api_inventory": [
+    {"prefix": "/observations", "status": "OPERATIONAL", "real_synthetic_flag": "PARTIAL"},
+    {"prefix": "/correspondence", "status": "OPERATIONAL_2D_ONLY", "real_synthetic_flag": "MISSING"},
+    {"prefix": "/registration", "status": "OPERATIONAL_SUBPIXEL", "real_synthetic_flag": "MISSING"},
+    {"prefix": "/entities", "status": "OPERATIONAL", "real_synthetic_flag": "PRESENT"},
+    {"prefix": "/graph", "status": "OPERATIONAL_NETWORKX", "real_synthetic_flag": "PRESENT"},
+    {"prefix": "/uncertainty", "status": "OPERATIONAL", "real_synthetic_flag": "PRESENT"},
+    {"prefix": "/knowledge-gaps", "status": "OPERATIONAL", "real_synthetic_flag": "PRESENT"},
+    {"prefix": "/recommendations", "status": "OPERATIONAL_CONSERVATIVE", "real_synthetic_flag": "PRESENT"},
+    {"prefix": "/benchmark", "status": "OPERATIONAL", "real_synthetic_flag": "PRESENT"},
+    {"prefix": "/red-team", "status": "OPERATIONAL", "real_synthetic_flag": "PRESENT"},
+    {"prefix": "/demo", "status": "SYNTHETIC_ONLY", "real_synthetic_flag": "NEEDS_EXPLICIT_IS_SYNTHETIC"},
+    {"prefix": "/system", "status": "OPERATIONAL", "real_synthetic_flag": "N/A"},
+    {"prefix": "/world-model", "status": "OPERATIONAL", "real_synthetic_flag": "PRESENT"}
+  ],
+  "demo_scenario_readiness": {
+    "scenario_a_real_lunar_non_overlap": "PARTIALLY_READY",
+    "scenario_b_synthetic_valid_correspondence": "READY",
+    "scenario_c_synthetic_illumination_deception": "READY",
+    "scenario_d_world_model_gap_nbo": "READY",
+    "scenario_e_uncertainty_contradiction": "READY"
+  }
+}

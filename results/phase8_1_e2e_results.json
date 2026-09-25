@@ -1,0 +1,82 @@
+{
+  "phase": "8.1",
+  "title": "End-to-End Scientific Integration Pipeline Certification",
+  "status": "PHASE8_1_E2E_INTEGRATED_VALIDATED",
+  "timestamp": "2026-09-24T19:40:00+05:30",
+  "metrics": {
+    "total_tests_collected": 307,
+    "total_tests_passed": 307,
+    "total_tests_failed": 0,
+    "total_tests_skipped": 0,
+    "regression_runtime_seconds": 111.71,
+    "targeted_e2e_tests_passed": 8,
+    "raw_data_bytes_modified": 0
+  },
+  "scenarios": {
+    "scenario_a_real_negative_control": {
+      "pair": "Chandrayaan-2 OHRC + TMC-2",
+      "source_product": "ch2_ohr_ncp_20210402T0546284043_d_img_d18",
+      "target_product": "ch2_tmc_nca_20240523T1600309581_d_img_d18",
+      "status": "REJECTED",
+      "is_synthetic": false,
+      "physical_verification_passed": false,
+      "num_inliers": 0,
+      "failed_gates": [
+        "GATE3_TARGET_OUTSIDE_CALIBRATED_SWATH",
+        "FOOTPRINT_NON_OVERLAP"
+      ],
+      "invariants_preserved": {
+        "physical_correspondence_not_validated": true,
+        "real_data_accuracy_na": true,
+        "entity_preserved": true,
+        "failed_corr_not_negative_evidence": true
+      },
+      "emitted_knowledge_gap": "FOOTPRINT_NON_OVERLAP"
+    },
+    "scenario_b_synthetic_positive_control": {
+      "pair": "Synthetic Controlled OHRC Multi-Pass",
+      "status": "ACCEPTED",
+      "is_synthetic": true,
+      "physical_verification_passed": true,
+      "num_inliers": 1002,
+      "entity_lifecycle_evolution": "SUPPORTED",
+      "real_lunar_accuracy_claim": "NONE (SYNTHETIC_CONTROLLED_SCENARIO)"
+    },
+    "scenario_c_unknown_evidence": {
+      "scenario": "Featureless Flat Terrain",
+      "status": "UNKNOWN",
+      "unknown_not_negative": true,
+      "num_inliers": 0,
+      "entity_state": "CANDIDATE",
+      "uncertainty_unconstrained": true
+    },
+    "scenario_d_contradictory_evidence": {
+      "scenario": "Opposing Solar Illumination Morphological Conflict",
+      "status": "REJECTED_OR_CONTRADICTED",
+      "evidence_disagreement": 0.72,
+      "total_uncertainty": 0.68,
+      "contradiction_preserved": true,
+      "silent_averaging_prevented": true
+    }
+  },
+  "guardrails_verified": {
+    "entity_association_ne_image_correspondence": true,
+    "provenance_preservation": true,
+    "physical_rejection_propagation": true,
+    "active_observation_wording": "POTENTIALLY_REDUCES_UNCERTAINTY",
+    "no_will_resolve_guarantees": true
+  },
+  "files_created": [
+    "outgraph/backend/app/services/pipeline_service.py",
+    "outgraph/tests/test_phase8_1_e2e_pipeline.py",
+    "results/phase8_1_e2e_results.json",
+    "docs/PHASE8_1_E2E_INTEGRATION_REPORT.md"
+  ],
+  "files_modified": [
+    "outgraph/backend/app/services/__init__.py",
+    "outgraph/backend/app/services/demo_service.py",
+    "outgraph/backend/app/services/observation_service.py",
+    "outgraph/backend/app/services/correspondence_service.py",
+    "outgraph/ml/world_model/graph.py"
+  ]
+}

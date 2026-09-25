@@ -1,0 +1,597 @@
+[
+  {
+    "pair_id": "REAL_OHRC_TMC2_001_001",
+    "matcher": "SIFT",
+    "source_sensor": "OHRC",
+    "target_sensor": "TMC-2",
+    "is_real_data": true,
+    "ground_truth_level": "LEVEL_UNKNOWN",
+    "status": "AMBIGUOUS",
+    "rejection_reason": "High Reprojection Error: 14623542737.07 px mean residual (> 4.0 px threshold)",
+    "metrics": {
+      "keypoints_source": 2000,
+      "keypoints_target": 563,
+      "candidate_matches": 31,
+      "ratio_test_matches": 31,
+      "geometric_inliers": 8,
+      "inlier_ratio": 0.2581,
+      "mean_reprojection_error_px": 14623542737.075,
+      "median_reprojection_error_px": 12762743824.354,
+      "rmse_px": 19346252956.355,
+      "homography_condition_number": 57476970.22,
+      "spatial_coverage_ratio": 0.1282,
+      "convex_hull_area_ratio": 0.1282,
+      "spatial_entropy": 0.539,
+      "native_gsd_source_m": 0.26,
+      "native_gsd_target_m": 6.07,
+      "gsd_status": "KNOWN",
+      "estimated_scale_ratio": 0.0428,
+      "scale_ratio_status": "KNOWN",
+      "feature_ambiguity": 0.641,
+      "feature_sparsity": 0.0,
+      "overlap_confidence": 0.15,
+      "matcher_name": "SIFT",
+      "matcher_implementation_status": "REAL",
+      "preprocessing_time_sec": 2.3586,
+      "matching_time_sec": 0.2054,
+      "verification_time_sec": 0.0308,
+      "total_processing_time_sec": 2.5948
+    },
+    "failure_analysis": {
+      "outcome": "AMBIGUOUS",
+      "dominant_failure": "GEOMETRIC_FAILURE",
+      "secondary_failure": "GEOMETRIC_FAILURE",
+      "rejection_reasons": [
+        "High Reprojection Error: 14623542737.07 px mean residual (> 4.0 px threshold)",
+        "Unstable Transformation Matrix: Homography condition number = 57476970.2 (> 500.0)"
+      ],
+      "evidence_breakdown": {
+        "candidate_matches": 31,
+        "inliers": 8,
+        "inlier_ratio": 0.25806451612903225,
+        "mean_reprojection_error_px": 14623542737.0747,
+        "spatial_coverage_ratio": 0.12822197656376924,
+        "condition_number": 57476970.21947332,
+        "gsd_status": "KNOWN",
+        "detected_failure_count": 2
+      },
+      "explanation": "Candidate matches exhibit partial geometric alignment but exceed residual or spatial entropy limits."
+    },
+    "iirs_metadata": {},
+    "provenance": {
+      "source": {
+        "source_name": "ISSDC / Chandrayaan-2",
+        "original_filename": "ch2_ohr_ncp_20210402T0546284043_d_img_d18.xml",
+        "product_id": "urn:isro:isda:ch2_cho.ohr:data_calibrated:ch2_ohr_ncp_20210402t0546284043_d_img_d18",
+        "ingestion_timestamp": "2026-09-21 06:35:47.436487",
+        "sha256_checksum": "e527449f8a4517ec7d2cb41d3b41ecc307f1e18a0684ede15072a2ef7c631877",
+        "metadata_extraction_status": "SUCCESS",
+        "processing_history": [
+          {
+            "step": "INGESTION",
+            "timestamp": "2026-09-21T06:35:47.436493",
+            "details": "File ingested from ISSDC / Chandrayaan-2"
+          },
+          {
+            "step": "CORRESPONDENCE_VIEW_EXTRACTION",
+            "timestamp": "2026-09-21T06:35:48.486045",
+            "parameters": {
+              "selected_band": 0,
+              "source_dtype": "uint8",
+              "view_shape": [
+                2005,
+                308
+              ]
+            },
+            "description": "Created non-destructive 8-bit visualization view for correspondence matchers"
+          }
+        ]
+      },
+      "target": {
+        "source_name": "ISSDC / Chandrayaan-2",
+        "original_filename": "ch2_tmc_nca_20240523T1600309581_d_img_d18.xml",
+        "product_id": "urn:isro:isda:ch2_cho.tmc:data_calibrated:ch2_tmc_nca_20240523t1600309581_d_img_d18",
+        "ingestion_timestamp": "2026-09-21 06:35:48.472475",
+        "sha256_checksum": "bb163ef874942f764b349448be5ba7d60eb5ed5c9750b08d1e8aaacc0da1a123",
+        "metadata_extraction_status": "SUCCESS",
+        "processing_history": [
+          {
+            "step": "INGESTION",
+            "timestamp": "2026-09-21T06:35:48.472481",
+            "details": "File ingested from ISSDC / Chandrayaan-2"
+          },
+          {
+            "step": "CORRESPONDENCE_VIEW_EXTRACTION",
+            "timestamp": "2026-09-21T06:35:48.497804",
+            "parameters": {
+              "selected_band": 0,
+              "source_dtype": "uint16",
+              "view_shape": [
+                2044,
+                39
+              ]
+            },
+            "description": "Created non-destructive 8-bit visualization view for correspondence matchers"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pair_id": "REAL_OHRC_TMC2_001_001",
+    "matcher": "ORB",
+    "source_sensor": "OHRC",
+    "target_sensor": "TMC-2",
+    "is_real_data": true,
+    "ground_truth_level": "LEVEL_UNKNOWN",
+    "status": "INSUFFICIENT_EVIDENCE",
+    "rejection_reason": "Feature Sparsity: Extremely low keypoint extraction count (Src: 2500, Tgt: 0)",
+    "metrics": {
+      "keypoints_source": 2500,
+      "keypoints_target": 0,
+      "candidate_matches": 0,
+      "ratio_test_matches": 0,
+      "geometric_inliers": 0,
+      "inlier_ratio": 0.0,
+      "mean_reprojection_error_px": 999.0,
+      "median_reprojection_error_px": 999.0,
+      "rmse_px": 999.0,
+      "homography_condition_number": 1.0,
+      "spatial_coverage_ratio": 0.0,
+      "convex_hull_area_ratio": 0.0,
+      "spatial_entropy": 0.0,
+      "native_gsd_source_m": 0.26,
+      "native_gsd_target_m": 6.07,
+      "gsd_status": "KNOWN",
+      "estimated_scale_ratio": 0.0428,
+      "scale_ratio_status": "KNOWN",
+      "feature_ambiguity": 1.0,
+      "feature_sparsity": 0.0,
+      "overlap_confidence": 0.0,
+      "matcher_name": "ORB",
+      "matcher_implementation_status": "REAL",
+      "preprocessing_time_sec": 2.1973,
+      "matching_time_sec": 2.085,
+      "verification_time_sec": 0.0001,
+      "total_processing_time_sec": 4.2824
+    },
+    "failure_analysis": {
+      "outcome": "INSUFFICIENT_EVIDENCE",
+      "dominant_failure": "FEATURE_SPARSITY_FAILURE",
+      "secondary_failure": "FEATURE_SPARSITY_FAILURE",
+      "rejection_reasons": [
+        "Feature Sparsity: Extremely low keypoint extraction count (Src: 2500, Tgt: 0)",
+        "Insufficient Candidate Matches: Only 0 raw candidate matches found",
+        "Low Inlier Count: 0 inliers found (< 6 required minimum)",
+        "Low Inlier Ratio: 0.0% inliers (< 25.0% required)",
+        "High Reprojection Error: 999.00 px mean residual (> 4.0 px threshold)"
+      ],
+      "evidence_breakdown": {
+        "candidate_matches": 0,
+        "inliers": 0,
+        "inlier_ratio": 0.0,
+        "mean_reprojection_error_px": 999.0,
+        "spatial_coverage_ratio": 0.0,
+        "condition_number": 1.0,
+        "gsd_status": "KNOWN",
+        "detected_failure_count": 5
+      },
+      "explanation": "Insufficient feature matches to form a scientifically valid correspondence hypothesis."
+    },
+    "iirs_metadata": {},
+    "provenance": {
+      "source": {
+        "source_name": "ISSDC / Chandrayaan-2",
+        "original_filename": "ch2_ohr_ncp_20210402T0546284043_d_img_d18.xml",
+        "product_id": "urn:isro:isda:ch2_cho.ohr:data_calibrated:ch2_ohr_ncp_20210402t0546284043_d_img_d18",
+        "ingestion_timestamp": "2026-09-21 06:35:49.991082",
+        "sha256_checksum": "e527449f8a4517ec7d2cb41d3b41ecc307f1e18a0684ede15072a2ef7c631877",
+        "metadata_extraction_status": "SUCCESS",
+        "processing_history": [
+          {
+            "step": "INGESTION",
+            "timestamp": "2026-09-21T06:35:49.991086",
+            "details": "File ingested from ISSDC / Chandrayaan-2"
+          },
+          {
+            "step": "CORRESPONDENCE_VIEW_EXTRACTION",
+            "timestamp": "2026-09-21T06:35:50.944246",
+            "parameters": {
+              "selected_band": 0,
+              "source_dtype": "uint8",
+              "view_shape": [
+                2005,
+                308
+              ]
+            },
+            "description": "Created non-destructive 8-bit visualization view for correspondence matchers"
+          }
+        ]
+      },
+      "target": {
+        "source_name": "ISSDC / Chandrayaan-2",
+        "original_filename": "ch2_tmc_nca_20240523T1600309581_d_img_d18.xml",
+        "product_id": "urn:isro:isda:ch2_cho.tmc:data_calibrated:ch2_tmc_nca_20240523t1600309581_d_img_d18",
+        "ingestion_timestamp": "2026-09-21 06:35:50.927547",
+        "sha256_checksum": "bb163ef874942f764b349448be5ba7d60eb5ed5c9750b08d1e8aaacc0da1a123",
+        "metadata_extraction_status": "SUCCESS",
+        "processing_history": [
+          {
+            "step": "INGESTION",
+            "timestamp": "2026-09-21T06:35:50.927551",
+            "details": "File ingested from ISSDC / Chandrayaan-2"
+          },
+          {
+            "step": "CORRESPONDENCE_VIEW_EXTRACTION",
+            "timestamp": "2026-09-21T06:35:50.956261",
+            "parameters": {
+              "selected_band": 0,
+              "source_dtype": "uint16",
+              "view_shape": [
+                2044,
+                39
+              ]
+            },
+            "description": "Created non-destructive 8-bit visualization view for correspondence matchers"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pair_id": "REAL_OHRC_TMC2_001_001",
+    "matcher": "SUPERPOINT",
+    "source_sensor": "OHRC",
+    "target_sensor": "TMC-2",
+    "is_real_data": true,
+    "ground_truth_level": "LEVEL_UNKNOWN",
+    "status": "AMBIGUOUS",
+    "rejection_reason": "Low Inlier Ratio: 23.5% inliers (< 25.0% required)",
+    "metrics": {
+      "keypoints_source": 2500,
+      "keypoints_target": 563,
+      "candidate_matches": 34,
+      "ratio_test_matches": 34,
+      "geometric_inliers": 8,
+      "inlier_ratio": 0.2353,
+      "mean_reprojection_error_px": 24704311463.51,
+      "median_reprojection_error_px": 32231136660.753,
+      "rmse_px": 31340396956.784,
+      "homography_condition_number": 649613355.9,
+      "spatial_coverage_ratio": 0.0978,
+      "convex_hull_area_ratio": 0.0978,
+      "spatial_entropy": 0.539,
+      "native_gsd_source_m": 0.26,
+      "native_gsd_target_m": 6.07,
+      "gsd_status": "KNOWN",
+      "estimated_scale_ratio": 0.0428,
+      "scale_ratio_status": "KNOWN",
+      "feature_ambiguity": 0.639,
+      "feature_sparsity": 0.0,
+      "overlap_confidence": 0.15,
+      "matcher_name": "SUPERPOINT",
+      "matcher_implementation_status": "FALLBACK",
+      "preprocessing_time_sec": 1.8577,
+      "matching_time_sec": 0.2359,
+      "verification_time_sec": 0.0462,
+      "total_processing_time_sec": 2.1398
+    },
+    "failure_analysis": {
+      "outcome": "AMBIGUOUS",
+      "dominant_failure": "GEOMETRIC_FAILURE",
+      "secondary_failure": "GEOMETRIC_FAILURE",
+      "rejection_reasons": [
+        "Low Inlier Ratio: 23.5% inliers (< 25.0% required)",
+        "High Reprojection Error: 24704311463.51 px mean residual (> 4.0 px threshold)",
+        "Unstable Transformation Matrix: Homography condition number = 649613355.9 (> 500.0)"
+      ],
+      "evidence_breakdown": {
+        "candidate_matches": 34,
+        "inliers": 8,
+        "inlier_ratio": 0.23529411764705882,
+        "mean_reprojection_error_px": 24704311463.51036,
+        "spatial_coverage_ratio": 0.09784337330143365,
+        "condition_number": 649613355.9023296,
+        "gsd_status": "KNOWN",
+        "detected_failure_count": 3
+      },
+      "explanation": "Candidate matches exhibit partial geometric alignment but exceed residual or spatial entropy limits."
+    },
+    "iirs_metadata": {},
+    "provenance": {
+      "source": {
+        "source_name": "ISSDC / Chandrayaan-2",
+        "original_filename": "ch2_ohr_ncp_20210402T0546284043_d_img_d18.xml",
+        "product_id": "urn:isro:isda:ch2_cho.ohr:data_calibrated:ch2_ohr_ncp_20210402t0546284043_d_img_d18",
+        "ingestion_timestamp": "2026-09-21 06:35:53.962434",
+        "sha256_checksum": "e527449f8a4517ec7d2cb41d3b41ecc307f1e18a0684ede15072a2ef7c631877",
+        "metadata_extraction_status": "SUCCESS",
+        "processing_history": [
+          {
+            "step": "INGESTION",
+            "timestamp": "2026-09-21T06:35:53.962437",
+            "details": "File ingested from ISSDC / Chandrayaan-2"
+          },
+          {
+            "step": "CORRESPONDENCE_VIEW_EXTRACTION",
+            "timestamp": "2026-09-21T06:35:54.904951",
+            "parameters": {
+              "selected_band": 0,
+              "source_dtype": "uint8",
+              "view_shape": [
+                2005,
+                308
+              ]
+            },
+            "description": "Created non-destructive 8-bit visualization view for correspondence matchers"
+          }
+        ]
+      },
+      "target": {
+        "source_name": "ISSDC / Chandrayaan-2",
+        "original_filename": "ch2_tmc_nca_20240523T1600309581_d_img_d18.xml",
+        "product_id": "urn:isro:isda:ch2_cho.tmc:data_calibrated:ch2_tmc_nca_20240523t1600309581_d_img_d18",
+        "ingestion_timestamp": "2026-09-21 06:35:54.887311",
+        "sha256_checksum": "bb163ef874942f764b349448be5ba7d60eb5ed5c9750b08d1e8aaacc0da1a123",
+        "metadata_extraction_status": "SUCCESS",
+        "processing_history": [
+          {
+            "step": "INGESTION",
+            "timestamp": "2026-09-21T06:35:54.887336",
+            "details": "File ingested from ISSDC / Chandrayaan-2"
+          },
+          {
+            "step": "CORRESPONDENCE_VIEW_EXTRACTION",
+            "timestamp": "2026-09-21T06:35:54.922454",
+            "parameters": {
+              "selected_band": 0,
+              "source_dtype": "uint16",
+              "view_shape": [
+                2044,
+                39
+              ]
+            },
+            "description": "Created non-destructive 8-bit visualization view for correspondence matchers"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pair_id": "REAL_OHRC_TMC2_001_001",
+    "matcher": "LOFTR",
+    "source_sensor": "OHRC",
+    "target_sensor": "TMC-2",
+    "is_real_data": true,
+    "ground_truth_level": "LEVEL_UNKNOWN",
+    "status": "AMBIGUOUS",
+    "rejection_reason": "Low Inlier Ratio: 20.0% inliers (< 25.0% required)",
+    "metrics": {
+      "keypoints_source": 3000,
+      "keypoints_target": 563,
+      "candidate_matches": 40,
+      "ratio_test_matches": 40,
+      "geometric_inliers": 8,
+      "inlier_ratio": 0.2,
+      "mean_reprojection_error_px": 0.672,
+      "median_reprojection_error_px": 0.637,
+      "rmse_px": 0.793,
+      "homography_condition_number": 1450958625.04,
+      "spatial_coverage_ratio": 0.0743,
+      "convex_hull_area_ratio": 0.0743,
+      "spatial_entropy": 0.539,
+      "native_gsd_source_m": 0.26,
+      "native_gsd_target_m": 6.07,
+      "gsd_status": "KNOWN",
+      "estimated_scale_ratio": 0.0428,
+      "scale_ratio_status": "KNOWN",
+      "feature_ambiguity": 0.641,
+      "feature_sparsity": 0.0,
+      "overlap_confidence": 0.15,
+      "matcher_name": "LOFTR",
+      "matcher_implementation_status": "FALLBACK",
+      "preprocessing_time_sec": 1.8289,
+      "matching_time_sec": 0.2241,
+      "verification_time_sec": 0.0486,
+      "total_processing_time_sec": 2.1015
+    },
+    "failure_analysis": {
+      "outcome": "AMBIGUOUS",
+      "dominant_failure": "GEOMETRIC_FAILURE",
+      "secondary_failure": "GEOMETRIC_FAILURE",
+      "rejection_reasons": [
+        "Low Inlier Ratio: 20.0% inliers (< 25.0% required)",
+        "Unstable Transformation Matrix: Homography condition number = 1450958625.0 (> 500.0)"
+      ],
+      "evidence_breakdown": {
+        "candidate_matches": 40,
+        "inliers": 8,
+        "inlier_ratio": 0.2,
+        "mean_reprojection_error_px": 0.6718997923861644,
+        "spatial_coverage_ratio": 0.07426033997609717,
+        "condition_number": 1450958625.037875,
+        "gsd_status": "KNOWN",
+        "detected_failure_count": 2
+      },
+      "explanation": "Candidate matches exhibit partial geometric alignment but exceed residual or spatial entropy limits."
+    },
+    "iirs_metadata": {},
+    "provenance": {
+      "source": {
+        "source_name": "ISSDC / Chandrayaan-2",
+        "original_filename": "ch2_ohr_ncp_20210402T0546284043_d_img_d18.xml",
+        "product_id": "urn:isro:isda:ch2_cho.ohr:data_calibrated:ch2_ohr_ncp_20210402t0546284043_d_img_d18",
+        "ingestion_timestamp": "2026-09-21 06:35:56.218610",
+        "sha256_checksum": "e527449f8a4517ec7d2cb41d3b41ecc307f1e18a0684ede15072a2ef7c631877",
+        "metadata_extraction_status": "SUCCESS",
+        "processing_history": [
+          {
+            "step": "INGESTION",
+            "timestamp": "2026-09-21T06:35:56.218615",
+            "details": "File ingested from ISSDC / Chandrayaan-2"
+          },
+          {
+            "step": "CORRESPONDENCE_VIEW_EXTRACTION",
+            "timestamp": "2026-09-21T06:35:57.054199",
+            "parameters": {
+              "selected_band": 0,
+              "source_dtype": "uint8",
+              "view_shape": [
+                2005,
+                308
+              ]
+            },
+            "description": "Created non-destructive 8-bit visualization view for correspondence matchers"
+          }
+        ]
+      },
+      "target": {
+        "source_name": "ISSDC / Chandrayaan-2",
+        "original_filename": "ch2_tmc_nca_20240523T1600309581_d_img_d18.xml",
+        "product_id": "urn:isro:isda:ch2_cho.tmc:data_calibrated:ch2_tmc_nca_20240523t1600309581_d_img_d18",
+        "ingestion_timestamp": "2026-09-21 06:35:57.037703",
+        "sha256_checksum": "bb163ef874942f764b349448be5ba7d60eb5ed5c9750b08d1e8aaacc0da1a123",
+        "metadata_extraction_status": "SUCCESS",
+        "processing_history": [
+          {
+            "step": "INGESTION",
+            "timestamp": "2026-09-21T06:35:57.037707",
+            "details": "File ingested from ISSDC / Chandrayaan-2"
+          },
+          {
+            "step": "CORRESPONDENCE_VIEW_EXTRACTION",
+            "timestamp": "2026-09-21T06:35:57.067011",
+            "parameters": {
+              "selected_band": 0,
+              "source_dtype": "uint16",
+              "view_shape": [
+                2044,
+                39
+              ]
+            },
+            "description": "Created non-destructive 8-bit visualization view for correspondence matchers"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pair_id": "REAL_OHRC_TMC2_001_001",
+    "matcher": "RIFT",
+    "source_sensor": "OHRC",
+    "target_sensor": "TMC-2",
+    "is_real_data": true,
+    "ground_truth_level": "LEVEL_UNKNOWN",
+    "status": "AMBIGUOUS",
+    "rejection_reason": "Low Inlier Ratio: 16.1% inliers (< 25.0% required)",
+    "metrics": {
+      "keypoints_source": 2500,
+      "keypoints_target": 687,
+      "candidate_matches": 56,
+      "ratio_test_matches": 56,
+      "geometric_inliers": 9,
+      "inlier_ratio": 0.1607,
+      "mean_reprojection_error_px": 2637758544.53,
+      "median_reprojection_error_px": 1.785,
+      "rmse_px": 5636405532.305,
+      "homography_condition_number": 8774702158.98,
+      "spatial_coverage_ratio": 0.2426,
+      "convex_hull_area_ratio": 0.2426,
+      "spatial_entropy": 0.66,
+      "native_gsd_source_m": 0.26,
+      "native_gsd_target_m": 6.07,
+      "gsd_status": "KNOWN",
+      "estimated_scale_ratio": 0.0428,
+      "scale_ratio_status": "KNOWN",
+      "feature_ambiguity": 0.641,
+      "feature_sparsity": 0.0,
+      "overlap_confidence": 0.15,
+      "matcher_name": "RIFT",
+      "matcher_implementation_status": "SIMULATED",
+      "preprocessing_time_sec": 1.6794,
+      "matching_time_sec": 0.2074,
+      "verification_time_sec": 0.0508,
+      "total_processing_time_sec": 1.9377
+    },
+    "failure_analysis": {
+      "outcome": "AMBIGUOUS",
+      "dominant_failure": "GEOMETRIC_FAILURE",
+      "secondary_failure": "GEOMETRIC_FAILURE",
+      "rejection_reasons": [
+        "Low Inlier Ratio: 16.1% inliers (< 25.0% required)",
+        "High Reprojection Error: 2637758544.53 px mean residual (> 4.0 px threshold)",
+        "Unstable Transformation Matrix: Homography condition number = 8774702159.0 (> 500.0)"
+      ],
+      "evidence_breakdown": {
+        "candidate_matches": 56,
+        "inliers": 9,
+        "inlier_ratio": 0.16071428571428573,
+        "mean_reprojection_error_px": 2637758544.5299134,
+        "spatial_coverage_ratio": 0.24257850219314164,
+        "condition_number": 8774702158.979342,
+        "gsd_status": "KNOWN",
+        "detected_failure_count": 3
+      },
+      "explanation": "Candidate matches exhibit partial geometric alignment but exceed residual or spatial entropy limits."
+    },
+    "iirs_metadata": {},
+    "provenance": {
+      "source": {
+        "source_name": "ISSDC / Chandrayaan-2",
+        "original_filename": "ch2_ohr_ncp_20210402T0546284043_d_img_d18.xml",
+        "product_id": "urn:isro:isda:ch2_cho.ohr:data_calibrated:ch2_ohr_ncp_20210402t0546284043_d_img_d18",
+        "ingestion_timestamp": "2026-09-21 06:35:58.230248",
+        "sha256_checksum": "e527449f8a4517ec7d2cb41d3b41ecc307f1e18a0684ede15072a2ef7c631877",
+        "metadata_extraction_status": "SUCCESS",
+        "processing_history": [
+          {
+            "step": "INGESTION",
+            "timestamp": "2026-09-21T06:35:58.230257",
+            "details": "File ingested from ISSDC / Chandrayaan-2"
+          },
+          {
+            "step": "CORRESPONDENCE_VIEW_EXTRACTION",
+            "timestamp": "2026-09-21T06:35:59.039066",
+            "parameters": {
+              "selected_band": 0,
+              "source_dtype": "uint8",
+              "view_shape": [
+                2005,
+                308
+              ]
+            },
+            "description": "Created non-destructive 8-bit visualization view for correspondence matchers"
+          }
+        ]
+      },
+      "target": {
+        "source_name": "ISSDC / Chandrayaan-2",
+        "original_filename": "ch2_tmc_nca_20240523T1600309581_d_img_d18.xml",
+        "product_id": "urn:isro:isda:ch2_cho.tmc:data_calibrated:ch2_tmc_nca_20240523t1600309581_d_img_d18",
+        "ingestion_timestamp": "2026-09-21 06:35:59.026726",
+        "sha256_checksum": "bb163ef874942f764b349448be5ba7d60eb5ed5c9750b08d1e8aaacc0da1a123",
+        "metadata_extraction_status": "SUCCESS",
+        "processing_history": [
+          {
+            "step": "INGESTION",
+            "timestamp": "2026-09-21T06:35:59.026730",
+            "details": "File ingested from ISSDC / Chandrayaan-2"
+          },
+          {
+            "step": "CORRESPONDENCE_VIEW_EXTRACTION",
+            "timestamp": "2026-09-21T06:35:59.049917",
+            "parameters": {
+              "selected_band": 0,
+              "source_dtype": "uint16",
+              "view_shape": [
+                2044,
+                39
+              ]
+            },
+            "description": "Created non-destructive 8-bit visualization view for correspondence matchers"
+          }
+        ]
+      }
+    }
+  }
+]

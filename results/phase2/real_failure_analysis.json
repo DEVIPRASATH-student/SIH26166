@@ -1,0 +1,132 @@
+[
+  {
+    "pair_id": "REAL_OHRC_TMC2_001_001",
+    "matcher": "SIFT",
+    "status": "AMBIGUOUS",
+    "failure_analysis": {
+      "outcome": "AMBIGUOUS",
+      "dominant_failure": "GEOMETRIC_FAILURE",
+      "secondary_failure": "GEOMETRIC_FAILURE",
+      "rejection_reasons": [
+        "High Reprojection Error: 14623542737.07 px mean residual (> 4.0 px threshold)",
+        "Unstable Transformation Matrix: Homography condition number = 57476970.2 (> 500.0)"
+      ],
+      "evidence_breakdown": {
+        "candidate_matches": 31,
+        "inliers": 8,
+        "inlier_ratio": 0.25806451612903225,
+        "mean_reprojection_error_px": 14623542737.0747,
+        "spatial_coverage_ratio": 0.12822197656376924,
+        "condition_number": 57476970.21947332,
+        "gsd_status": "KNOWN",
+        "detected_failure_count": 2
+      },
+      "explanation": "Candidate matches exhibit partial geometric alignment but exceed residual or spatial entropy limits."
+    }
+  },
+  {
+    "pair_id": "REAL_OHRC_TMC2_001_001",
+    "matcher": "ORB",
+    "status": "INSUFFICIENT_EVIDENCE",
+    "failure_analysis": {
+      "outcome": "INSUFFICIENT_EVIDENCE",
+      "dominant_failure": "FEATURE_SPARSITY_FAILURE",
+      "secondary_failure": "FEATURE_SPARSITY_FAILURE",
+      "rejection_reasons": [
+        "Feature Sparsity: Extremely low keypoint extraction count (Src: 2500, Tgt: 0)",
+        "Insufficient Candidate Matches: Only 0 raw candidate matches found",
+        "Low Inlier Count: 0 inliers found (< 6 required minimum)",
+        "Low Inlier Ratio: 0.0% inliers (< 25.0% required)",
+        "High Reprojection Error: 999.00 px mean residual (> 4.0 px threshold)"
+      ],
+      "evidence_breakdown": {
+        "candidate_matches": 0,
+        "inliers": 0,
+        "inlier_ratio": 0.0,
+        "mean_reprojection_error_px": 999.0,
+        "spatial_coverage_ratio": 0.0,
+        "condition_number": 1.0,
+        "gsd_status": "KNOWN",
+        "detected_failure_count": 5
+      },
+      "explanation": "Insufficient feature matches to form a scientifically valid correspondence hypothesis."
+    }
+  },
+  {
+    "pair_id": "REAL_OHRC_TMC2_001_001",
+    "matcher": "SUPERPOINT",
+    "status": "AMBIGUOUS",
+    "failure_analysis": {
+      "outcome": "AMBIGUOUS",
+      "dominant_failure": "GEOMETRIC_FAILURE",
+      "secondary_failure": "GEOMETRIC_FAILURE",
+      "rejection_reasons": [
+        "Low Inlier Ratio: 23.5% inliers (< 25.0% required)",
+        "High Reprojection Error: 24704311463.51 px mean residual (> 4.0 px threshold)",
+        "Unstable Transformation Matrix: Homography condition number = 649613355.9 (> 500.0)"
+      ],
+      "evidence_breakdown": {
+        "candidate_matches": 34,
+        "inliers": 8,
+        "inlier_ratio": 0.23529411764705882,
+        "mean_reprojection_error_px": 24704311463.51036,
+        "spatial_coverage_ratio": 0.09784337330143365,
+        "condition_number": 649613355.9023296,
+        "gsd_status": "KNOWN",
+        "detected_failure_count": 3
+      },
+      "explanation": "Candidate matches exhibit partial geometric alignment but exceed residual or spatial entropy limits."
+    }
+  },
+  {
+    "pair_id": "REAL_OHRC_TMC2_001_001",
+    "matcher": "LOFTR",
+    "status": "AMBIGUOUS",
+    "failure_analysis": {
+      "outcome": "AMBIGUOUS",
+      "dominant_failure": "GEOMETRIC_FAILURE",
+      "secondary_failure": "GEOMETRIC_FAILURE",
+      "rejection_reasons": [
+        "Low Inlier Ratio: 20.0% inliers (< 25.0% required)",
+        "Unstable Transformation Matrix: Homography condition number = 1450958625.0 (> 500.0)"
+      ],
+      "evidence_breakdown": {
+        "candidate_matches": 40,
+        "inliers": 8,
+        "inlier_ratio": 0.2,
+        "mean_reprojection_error_px": 0.6718997923861644,
+        "spatial_coverage_ratio": 0.07426033997609717,
+        "condition_number": 1450958625.037875,
+        "gsd_status": "KNOWN",
+        "detected_failure_count": 2
+      },
+      "explanation": "Candidate matches exhibit partial geometric alignment but exceed residual or spatial entropy limits."
+    }
+  },
+  {
+    "pair_id": "REAL_OHRC_TMC2_001_001",
+    "matcher": "RIFT",
+    "status": "AMBIGUOUS",
+    "failure_analysis": {
+      "outcome": "AMBIGUOUS",
+      "dominant_failure": "GEOMETRIC_FAILURE",
+      "secondary_failure": "GEOMETRIC_FAILURE",
+      "rejection_reasons": [
+        "Low Inlier Ratio: 16.1% inliers (< 25.0% required)",
+        "High Reprojection Error: 2637758544.53 px mean residual (> 4.0 px threshold)",
+        "Unstable Transformation Matrix: Homography condition number = 8774702159.0 (> 500.0)"
+      ],
+      "evidence_breakdown": {
+        "candidate_matches": 56,
+        "inliers": 9,
+        "inlier_ratio": 0.16071428571428573,
+        "mean_reprojection_error_px": 2637758544.5299134,
+        "spatial_coverage_ratio": 0.24257850219314164,
+        "condition_number": 8774702158.979342,
+        "gsd_status": "KNOWN",
+        "detected_failure_count": 3
+      },
+      "explanation": "Candidate matches exhibit partial geometric alignment but exceed residual or spatial entropy limits."
+    }
+  }
+]

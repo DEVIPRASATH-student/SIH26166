@@ -1,0 +1,216 @@
+{
+  "phase": "8.6",
+  "status": "PERFORMANCE_RELIABILITY_VALIDATED",
+  "objective": "Performance, Reliability, and Deployment Hardening",
+  "system": "LunarSynapse — Physics-Aware, Self-Evolving Multi-Modal Lunar World Model",
+  "sih_problem": "SIH26166",
+  "timestamp": "2026-09-24T23:45:00Z",
+  "environment": {
+    "os": "Windows (win32)",
+    "python_version": "3.13.7",
+    "fastapi_backend": "0.115+",
+    "frontend_tooling": "Vite 6.4.3 / TypeScript 5.5 / React 18"
+  },
+  "raw_data_integrity": {
+    "status": "UNTOUCHED",
+    "bytes_modified": 0,
+    "path": "data/real/"
+  },
+  "scientific_invariants_preserved": {
+    "real_data_accuracy": "N/A",
+    "physical_correspondence_validated": false,
+    "real_lunar_empirical_uncertainty_calibration": "NOT ESTABLISHED",
+    "independent_tie_point_ground_truth": "NONE",
+    "epistemic_operator": "POTENTIALLY_REDUCES_UNCERTAINTY",
+    "six_physical_gates_intact": true,
+    "gate_5_identity": "TARGET_OUTSIDE_ELEVATION_CORRIDOR",
+    "illumination_verification_is_gate_5": false
+  },
+  "build_and_startup": {
+    "frontend_build_time_seconds": 5.39,
+    "frontend_bundle_sizes": {
+      "html_bytes": 1190,
+      "css_bytes": 44680,
+      "js_bytes": 555200
+    },
+    "backend_startup_ms": 9.69,
+    "traced_peak_memory_mb": 0.12
+  },
+  "measured_api_endpoints": {
+    "api_health": {
+      "method": "GET",
+      "url": "/api/system/health",
+      "status_code": 200,
+      "n_runs": 15,
+      "min_ms": 21.34,
+      "median_ms": 27.48,
+      "p95_ms": 318.64,
+      "p99_ms": 318.64,
+      "max_ms": 318.64,
+      "response_size_bytes": 310
+    },
+    "api_status": {
+      "method": "GET",
+      "url": "/api/system/status",
+      "status_code": 200,
+      "n_runs": 15,
+      "min_ms": 20.31,
+      "median_ms": 27.75,
+      "p95_ms": 48.36,
+      "p99_ms": 48.36,
+      "max_ms": 48.36,
+      "response_size_bytes": 749
+    },
+    "scenario_listing": {
+      "method": "GET",
+      "url": "/api/demo/scenarios",
+      "status_code": 200,
+      "n_runs": 15,
+      "min_ms": 16.08,
+      "median_ms": 20.79,
+      "p95_ms": 49.24,
+      "p99_ms": 49.24,
+      "max_ms": 49.24,
+      "response_size_bytes": 17593
+    },
+    "scenario_explanation": {
+      "method": "GET",
+      "url": "/api/demo/scenarios/SCENARIO-A/explanation",
+      "status_code": 200,
+      "n_runs": 15,
+      "min_ms": 18.93,
+      "median_ms": 20.34,
+      "p95_ms": 29.27,
+      "p99_ms": 29.27,
+      "max_ms": 29.27,
+      "response_size_bytes": 13600
+    },
+    "correspondence_retrieval": {
+      "method": "GET",
+      "url": "/api/correspondence",
+      "status_code": 200,
+      "n_runs": 15,
+      "min_ms": 42.32,
+      "median_ms": 61.24,
+      "p95_ms": 124.15,
+      "p99_ms": 124.15,
+      "max_ms": 124.15,
+      "response_size_bytes": 212225
+    },
+    "physical_verification_retrieval": {
+      "method": "GET",
+      "url": "/api/physical-verification/gates",
+      "status_code": 200,
+      "n_runs": 15,
+      "min_ms": 9.50,
+      "median_ms": 12.73,
+      "p95_ms": 16.97,
+      "p99_ms": 16.97,
+      "max_ms": 16.97,
+      "response_size_bytes": 2166
+    },
+    "evidence_retrieval": {
+      "method": "GET",
+      "url": "/api/evidence/dimensions",
+      "status_code": 200,
+      "n_runs": 15,
+      "min_ms": 8.60,
+      "median_ms": 10.51,
+      "p95_ms": 17.12,
+      "p99_ms": 17.12,
+      "max_ms": 17.12,
+      "response_size_bytes": 274
+    },
+    "uncertainty_retrieval": {
+      "method": "GET",
+      "url": "/api/uncertainty/summary",
+      "status_code": 200,
+      "n_runs": 15,
+      "min_ms": 17.48,
+      "median_ms": 19.65,
+      "p95_ms": 30.40,
+      "p99_ms": 30.40,
+      "max_ms": 30.40,
+      "response_size_bytes": 547
+    },
+    "knowledge_gap_retrieval": {
+      "method": "GET",
+      "url": "/api/knowledge-gaps/types",
+      "status_code": 200,
+      "n_runs": 15,
+      "min_ms": 7.25,
+      "median_ms": 9.44,
+      "p95_ms": 13.25,
+      "p99_ms": 13.25,
+      "max_ms": 13.25,
+      "response_size_bytes": 332
+    },
+    "recommendation_retrieval": {
+      "method": "GET",
+      "url": "/api/recommendations",
+      "status_code": 200,
+      "n_runs": 15,
+      "min_ms": 16.22,
+      "median_ms": 19.13,
+      "p95_ms": 37.92,
+      "p99_ms": 37.92,
+      "max_ms": 37.92,
+      "response_size_bytes": 11843
+    },
+    "world_model_retrieval": {
+      "method": "GET",
+      "url": "/api/world-model/entities",
+      "status_code": 200,
+      "n_runs": 15,
+      "min_ms": 15.73,
+      "median_ms": 16.68,
+      "p95_ms": 37.66,
+      "p99_ms": 37.66,
+      "max_ms": 37.66,
+      "response_size_bytes": 791
+    }
+  },
+  "unmeasured_metrics": {
+    "per_endpoint_cpu_percent": "NOT MEASURED",
+    "per_endpoint_heap_gc_delta": "NOT MEASURED",
+    "production_concurrent_satellite_downlink_rate": "NOT MEASURED",
+    "reason": "Accurate sub-millisecond per-request CPU and heap profiling requires kernel-level perf tools or psutil/tracemalloc instrumentation which cannot be sampled at this granularity without probe-effect distortion."
+  },
+  "reliability_and_hardening_tests": {
+    "suite": "outgraph/tests/test_phase8_6_reliability.py",
+    "total_tests": 17,
+    "passed": 17,
+    "failed": 0,
+    "errors": 0,
+    "categories_verified": [
+      "malformed_api_requests",
+      "missing_resources_404",
+      "unavailable_payload_handling",
+      "repeated_request_determinism",
+      "concurrent_read_safety",
+      "database_rollback_integrity",
+      "duplicate_recommendation_prevention",
+      "duplicate_entity_prevention",
+      "system_status_degraded_reporting",
+      "timeout_and_error_bounded_safety",
+      "large_data_safety_boundary",
+      "path_traversal_hardening",
+      "force_accept_bypass_protection",
+      "synthetic_provenance_tamper_protection",
+      "uncertainty_override_protection",
+      "subsystem_status_reporting",
+      "raw_data_integrity"
+    ]
+  },
+  "deployment_boundary": {
+    "frontend_layer": "Stateless React/TypeScript SPA requesting bounded JSON, previews, and thumbnails",
+    "api_layer": "FastAPI REST service orchestrating scientific pipelines and metadata caching",
+    "worker_boundary": "Isolated Python scientific execution volume managing memory mapping and SPICE / DEM lookups",
+    "storage_boundary": "Raw multi-GB PDS4 datasets reside exclusively on dedicated local/network block storage, never in serverless functions or frontend bundles"
+  },
+  "limitations": [
+    "Production deployment is NOT validated; only local multi-process execution has been benchmarked.",
+    "Real-data accuracy remains N/A; fast API response times do not establish physical correspondence validity.",
+    "Sub-millisecond per-endpoint CPU utilization is NOT MEASURED to avoid synthetic or ungrounded claims."
+  ]
+}

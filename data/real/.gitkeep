@@ -1,0 +1,7 @@
+# Real Lunar Data Directory Structure
+# Place local real lunar products into:
+# - data/real/chandrayaan2/ohrc/
+# - data/real/chandrayaan2/tmc2/
+# - data/real/chandrayaan2/iirs/
+# - data/real/lro/nac/
+# - data/real/selene/terrain/

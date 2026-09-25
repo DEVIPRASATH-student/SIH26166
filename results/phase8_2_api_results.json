@@ -1,0 +1,80 @@
+{
+  "system": "LunarSynapse",
+  "project": "SIH26166",
+  "phase": "8.2",
+  "stage": "Unified Backend / API Integration",
+  "timestamp": "2026-09-24T20:15:00+05:30",
+  "status": "PHASE8_2_API_INTEGRATED_VALIDATED",
+  "pipeline_controller_invoked": true,
+  "endpoints": {
+    "observations": {
+      "POST /api/observations": "Operational with geographic validation and synthetic-conversion guardrail",
+      "GET /api/observations/{id}": "Operational returning flight/synthetic metadata, footprints, and solar geometry",
+      "GET /api/observations": "Operational listing registered observations"
+    },
+    "correspondence": {
+      "POST /api/correspondence/analyze": "Operational invoking PipelineController across all 15 scientific steps",
+      "GET /api/correspondence": "Operational listing correspondences",
+      "GET /api/correspondence/{id}": "Operational returning complete multi-pillar evidence and physical gate status"
+    },
+    "physical_verification": {
+      "GET /api/physical-verification/gates": "Operational exposing Gate 1 through Gate 6 catalog and thresholds",
+      "GET /api/physical-verification/{id}": "Operational returning Six-Gate evaluation"
+    },
+    "evidence": {
+      "GET /api/evidence/dimensions": "Operational exposing 11 dimensions with UNKNOWN != NEGATIVE preservation",
+      "GET /api/evidence/{id}": "Operational returning dimension breakdowns and missing evidence list"
+    },
+    "uncertainty": {
+      "GET /api/uncertainty/summary": "Operational returning system uncertainty averages and calibration limitation",
+      "GET /api/uncertainty/{id}": "Operational returning scalar, interval, covariance, and qualitative semantics",
+      "POST /api/uncertainty/override": "403 Forbidden guardrail active against arbitrary client tampering"
+    },
+    "knowledge_gaps": {
+      "GET /api/knowledge-gaps/types": "Operational exposing 8 epistemic gap taxonomies",
+      "GET /api/knowledge-gaps": "Operational listing open gaps",
+      "GET /api/knowledge-gaps/{id}": "Operational retrieving specific gap"
+    },
+    "recommendations": {
+      "GET /api/recommendations": "Operational listing active NBO proposals",
+      "GET /api/recommendations/{id}": "Operational retrieving specific NBO proposal",
+      "POST /api/recommendations/next-observation": "Operational using POTENTIALLY_REDUCES_UNCERTAINTY with PAYLOAD_UNAVAILABLE fallback"
+    },
+    "system": {
+      "GET /api/system/health": "Operational returning ML backends, DB connectivity, and asset counts",
+      "GET /api/system/status": "Operational returning DEM/GroundGrid cache availability and 0-byte real data integrity"
+    }
+  },
+  "guardrails": {
+    "force_accept_bypass_forbidden": true,
+    "synthetic_conversion_to_real_forbidden": true,
+    "uncertainty_arbitrary_override_forbidden": true,
+    "unknown_not_negative_preserved": true,
+    "entity_association_not_image_correspondence_preserved": true,
+    "failed_correspondence_not_negative_entity_evidence_preserved": true,
+    "active_observation_language_potentially_reduces_uncertainty": true,
+    "physical_correspondence_not_validated_preserved": true,
+    "real_data_accuracy_na_preserved": true,
+    "real_lunar_uncertainty_calibration_not_established_preserved": true
+  },
+  "test_metrics": {
+    "phase8_2_api_tests": {
+      "total": 20,
+      "passed": 20,
+      "failed": 0,
+      "skipped": 0,
+      "runtime_seconds": 26.55
+    },
+    "full_repository_regression": {
+      "total": 327,
+      "passed": 327,
+      "failed": 0,
+      "skipped": 0,
+      "warnings": 707,
+      "runtime_seconds": 108.81
+    }
+  },
+  "raw_data_modification_bytes": 0,
+  "synthetic_data_created": true,
+  "blockers": []
+}
